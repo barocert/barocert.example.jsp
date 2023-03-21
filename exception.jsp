@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page isErrorPage="true" %>
-<%@page import="com.kakaocert.api.KakaocertException"%>
+<%@page import="com.barocert.BarocertException"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/main.css" media="screen"/>
-    <title>kakaocert SDK jsp Example.</title>
+    <title>Barocert SDK jsp Example.</title>
 </head>
 <body>
 <div id="content">
@@ -14,7 +14,7 @@
     <fieldset class="fieldset1">
         <legend>예외 발생</legend>
         <ul>
-            <li>Exception.code : <%=exception instanceof KakaocertException ? ((KakaocertException) exception).getCode() : "-"%> </li>
+            <li>Exception.code : <%=exception instanceof BarocertException ? ((BarocertException) exception).getCode() : "-"%> </li>
             <li>Exception.message : <%=exception.getMessage()%> </li>
         </ul>
     </fieldset>

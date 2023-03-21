@@ -2,11 +2,11 @@
 ===================================================================================
 * Barocert Kakao Service jsp Example.
 *
-* Class Module for base module for Popbill API SDK. It include base functionality for
+* Class Module for base module for Barocert API SDK. It include base functionality for
 * RESTful web service request and parse json result. It uses Linkhub class module
 * to accomplish authentication APIs.
 
-* Update date : 2023-03-10
+* Update date : 2023-03-22
 ===================================================================================
 --%>
 
@@ -19,6 +19,9 @@
 
 <%-- 비밀키, 사용자 인증에 사용되는 정보이므로 유출에 주의 --%>
 <jsp:setProperty name="kakaocertService" property="secretKey" value="egkxYN99ZObjLa3c0nr9/riG+a0VDkZu87LSGR8c37U="/>
+
+<%-- 인증토큰 발급 IP 제한 On/Off, true-사용, false-미사용  기본값(true)--%>
+<jsp:setProperty name="kakaocertService" property="IPRestrictOnOff" value="true"/>
 
 <%-- 인증토큰 발급 IP 제한 On/Off, true-사용, false-미사용  기본값(true)--%>
 <jsp:setProperty name="kakaocertService" property="IPRestrictOnOff" value="true"/>

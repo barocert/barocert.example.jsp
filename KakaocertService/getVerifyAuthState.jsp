@@ -7,6 +7,7 @@
 	</head>
 
 <%@ include file="common.jsp" %>
+
 <%@page import="com.barocert.BarocertException"%>
 <%@page import="com.barocert.kakaocert.verifyauth.VerifyAuthStateResult"%>
 
@@ -17,10 +18,10 @@
 	 */
 
     //이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
-    String clientCode = "023020000003";
+    String clientCode = "023030000003";
 
     //전자서명 요청시 반환된 접수아이디
-    String receiptID = "0230309201738000000000000000000000000001";
+    String receiptID = "0230322082052000000000000000000000000001";
     
     VerifyAuthStateResult result = null;
 
@@ -40,7 +41,6 @@
                 <legend>본인인증 상태확인</legend>
                 <ul>
                     <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
-                    <li>요청 아이디 (RequestID) : <%=result.getRequestID()%></li>
                     <li>이용기관 코드 (ClientCode) : <%=result.getClientCode()%></li>
                     <li>상태 (State) : <%=result.getState()%></li>
                     <li>요청 만료시간 (ExpireIn) : <%=result.getExpireIn()%></li>
@@ -49,7 +49,6 @@
                     <li>인증요청 메시지 제목 (ReqTitle) : <%=result.getReqTitle()%></li>
                     <li>인증분류 (AuthCategory) : <%=result.getAuthCategory()%></li>
                     <li>복귀 URL (ReturnURL) : <%=result.getReturnURL()%></li>
-                    <li>원문 구분 (TokenType) : <%=result.getTokenType()%></li>
                     <li>서명요청일시 (RequestDT) : <%=result.getRequestDT()%></li>
                     <li>서명조회일시 (ViewDT) : <%=result.getViewDT()%></li>
                     <li>서명완료일시 (CompleteDT) : <%=result.getCompleteDT()%></li>

@@ -7,6 +7,7 @@
 	</head>
 
 <%@ include file="common.jsp" %>
+
 <%@page import="com.barocert.BarocertException"%>
 <%@page import="com.barocert.kakaocert.cms.RequestCMS"%>
 <%@page import="com.barocert.kakaocert.cms.ResultCMS"%>
@@ -18,7 +19,7 @@
 	 */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
-    String clientCode = "023020000003";
+    String clientCode = "023030000003";
 
     // AppToApp 인증요청 여부
     // true - AppToApp 인증방식, false - Talk Message 인증방식
@@ -63,7 +64,7 @@
             <fieldset class="fieldset1">
                 <legend>출금동의 요청</legend>
                 <ul>
-                    <li>접수아이디 (receiptId) : <%=result.getReceiptId()%></li>
+                    <li>접수아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
                     <li>앱스킴 (scheme)[AppToApp 앱스킴 호출용] : <%=result.getScheme()%></li>
                 </ul>
             </fieldset>

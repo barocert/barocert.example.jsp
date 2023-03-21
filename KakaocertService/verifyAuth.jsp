@@ -7,6 +7,7 @@
 	</head>
 
 <%@ include file="common.jsp" %>
+
 <%@page import="com.barocert.BarocertException"%>
 <%@page import="com.barocert.kakaocert.verifyauth.VerifyAuthResult"%>
 
@@ -17,10 +18,10 @@
 	 */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
-    String clientCode = "023020000003";
+    String clientCode = "023030000003";
 
     // 전자서명 요청시 반환된 접수아이디
-    String receiptID = "0230309201738000000000000000000000000001";
+    String receiptID = "0230322082052000000000000000000000000001";
     
     VerifyAuthResult result = null;
 
@@ -40,7 +41,6 @@
                 <legend>본인인증 검증</legend>
                 <ul>
                     <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
-                    <li>요청 아이디 (RequestID) : <%=result.getRequestID()%></li>
                     <li>상태 (State) : <%=result.getState()%></li>
                     <li>전자서명 데이터 전문 (Token) : <%=result.getToken()%></li>
                 </ul>

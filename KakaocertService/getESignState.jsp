@@ -7,6 +7,7 @@
 	</head>
 
 <%@ include file="common.jsp" %>
+
 <%@page import="com.barocert.BarocertException"%>
 <%@page import="com.barocert.kakaocert.esign.ResultESignState"%>
 
@@ -17,10 +18,10 @@
 	 */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
-    String clientCode = "023020000003";
+    String clientCode = "023030000003";
 
     // 전자서명 요청시 반환된 접수아이디
-    String receiptID = "0230310143306000000000000000000000000001";
+    String receiptID = "0230322081532000000000000000000000000001";
     
     ResultESignState result = null;
 
@@ -40,7 +41,6 @@
                 <legend>전자서명 요청(단건)</legend>
                 <ul>
                     <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
-                    <li>요청 아이디 (RequestID) : <%=result.getRequestID()%></li>
                     <li>이용기관 코드 (ClientCode) : <%=result.getClientCode()%></li>
                     <li>상태 (State) : <%=result.getState()%></li>
                     <li>요청 만료시간 (ExpireIn) : <%=result.getExpireIn()%></li>

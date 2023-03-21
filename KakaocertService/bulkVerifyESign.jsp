@@ -7,7 +7,9 @@
 	</head>
 
 <%@page import="java.util.List" %>
+
 <%@ include file="common.jsp" %>
+
 <%@page import="com.barocert.BarocertException"%>
 <%@page import="com.barocert.kakaocert.esign.BulkVerifyESignResult"%>
 
@@ -18,10 +20,10 @@
 	 */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
-    String clientCode = "023020000003";
+    String clientCode = "023030000003";
 
     // 전자서명 요청시 반환된 접수아이디
-    String receiptID = "0230310165612000000000000000000000000001";
+    String receiptID = "0230322081829000000000000000000000000001";
     
     BulkVerifyESignResult result = null;
 
@@ -41,7 +43,6 @@
                 <legend>전자서명 검증(다건)</legend>
                 <ul>
                     <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
-                    <li>요청 아이디 (RequestID) : <%=result.getRequestID()%></li>
                     <li>상태 (State) : <%=result.getState()%></li>
                     
                     <% if (result.getBulkSignedData() != null) {
