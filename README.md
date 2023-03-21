@@ -1,11 +1,11 @@
-bartcert.example.jsp
+barocert.example.jsp
 =========================
 
-Bartcert SDK Example for jsp.
+Barocert SDK Example for jsp.
 
 requirements
  * jdk 1.6+
- * bartcert.sdk.java
+ * barocert.sdk.java
  * linkhub.auth.java
  * gson 2.3+
 
