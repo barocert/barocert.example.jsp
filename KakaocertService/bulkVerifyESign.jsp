@@ -6,43 +6,52 @@
 		<title>Barocert Kakaocert Service jsp Example.</title>
 	</head>
 
+<%@page import="java.util.List" %>
 <%@ include file="common.jsp" %>
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.cms.VerifyCMSResult"%>
+<%@page import="com.barocert.kakaocert.esign.BulkVerifyESignResult"%>
 
 <%
 	/*
-	 * 자동이체 출금동의 요청시 반환된 접수아이디를 통해 서명을 검증합니다.
-	 * - https://verifyCMS
+	 * 전자서명 요청시 반환된 접수아이디를 통해 서명을 검증합니다. (다건)
+	 * - https://bulkVerfiyESign
 	 */
 
-	// 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
+    // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
     String clientCode = "023020000003";
 
     // 전자서명 요청시 반환된 접수아이디
-    String receiptID = "0230309201738000000000000000000000000001";
+    String receiptID = "0230310165612000000000000000000000000001";
     
-    VerifyCMSResult result = null;
+    BulkVerifyESignResult result = null;
 
     try {
     	
-    	result = kakaocertService.verifyCMS(clientCode, receiptID);
+    	result = kakaocertService.bulkVerifyESign(clientCode, receiptID);
          
     } catch(BarocertException ke) {
         throw ke;
-  }
+  	}
 %>
     <body>
         <div id="content">
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>본인인증 검증</legend>
+                <legend>전자서명 검증(다건)</legend>
                 <ul>
                     <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
                     <li>요청 아이디 (RequestID) : <%=result.getRequestID()%></li>
                     <li>상태 (State) : <%=result.getState()%></li>
-                    <li>전자서명 데이터 전문 (SignedData) : <%=result.getSignedData()%></li>
+                    
+                    <% if (result.getBulkSignedData() != null) {
+		                List<String> bulkSignedData = result.getBulkSignedData();
+		                    for (int i = 0; i < bulkSignedData.size(); i++) { %>
+			            		<li>전자서명 데이터 전문 (SignedData) : <%=bulkSignedData.get(i)%></li>
+			            	<% }
+			            }
+		            %>
+		            
                     <li>연계정보 (Ci) : <%=result.getCi()%></li>
                 </ul>
             </fieldset>

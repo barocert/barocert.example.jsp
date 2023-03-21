@@ -3,44 +3,47 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/main.css" media="screen" />
-		<title>kakaocert SDK jsp Example.</title>
+		<title>Barocert Kakaocert Service jsp Example.</title>
 	</head>
 
 <%@ include file="common.jsp" %>
-<%@page import="com.kakaocert.api.KakaocertException"%>
-<%@page import="com.kakaocert.api.VerifyResult"%>
+<%@page import="com.barocert.BarocertException"%>
+<%@page import="com.barocert.kakaocert.esign.VerifyEsignResult"%>
 
 <%
-    /*
-     * [Talk Message] 전자서명 요청시 반환된 접수아이디를 통해 서명을 검증합니다.
-     * - 서명검증시 전자서명 데이터 전문(signedData)이 반환됩니다.
-     * - 카카오페이 API 서비스 운영정책에 따라 검증 API는 1회만 호출할 수 있습니다. 재시도시 오류처리됩니다.
-     * - https://www.kakaocert.com/docs/ESign/API/java#T-VerifyESign
-     */
+	/*
+	 * 전자서명 요청시 반환된 접수아이디를 통해 서명을 검증합니다. (단건)
+	 * - https://verifyESign
+	 */
 
-    // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
-    String ClientCode = "020040000001";
+	// 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
+    String clientCode = "023020000003";
 
     // 전자서명 요청시 반환된 접수아이디
-    String receiptID = "022050916030900001";
-
-    VerifyResult result = null;
+    String receiptID = "0230310143306000000000000000000000000001";
+    
+    VerifyEsignResult result = null;
 
     try {
-        result = kakaocertService.verifyESign(ClientCode, receiptID);
-    } catch(KakaocertException ke) {
+    	
+    	result = kakaocertService.verifyESign(clientCode, receiptID);
+         
+    } catch(BarocertException ke) {
         throw ke;
   }
 %>
     <body>
         <div id="content">
-            <p class="heading1">Response </p>
+            <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>전자서명 서명검증</legend>
+                <legend>전자서명 검증(단건)</legend>
                 <ul>
-                    <li>접수아이디 (receiptId) : <%=result.getReceiptId()%></li>
-                    <li>전자서명 데이터 전문 (signedData) : <%=result.getSignedData()%></li>
+                    <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
+                    <li>요청 아이디 (RequestID) : <%=result.getRequestID()%></li>
+                    <li>상태 (State) : <%=result.getState()%></li>
+                    <li>전자서명 데이터 전문 (SignedData) : <%=result.getSignedData()%></li>
+                    <li>연계정보 (Ci) : <%=result.getCi()%></li>
                 </ul>
             </fieldset>
         </div>

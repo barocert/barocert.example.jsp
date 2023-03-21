@@ -8,25 +8,25 @@
 
 <%@ include file="common.jsp" %>
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.verifyauth.VerifyAuthStateResult"%>
+<%@page import="com.barocert.kakaocert.esign.BulkResultESignState"%>
 
 <%
 	/*
-	 * 본인인증 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
-	 * - https://getVerifyAuthState
+	 * 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다. (다건)
+	 * - https://getBulkESignState
 	 */
 
-    //이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
+    // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
     String clientCode = "023020000003";
 
-    //전자서명 요청시 반환된 접수아이디
-    String receiptID = "0230309201738000000000000000000000000001";
+    // 전자서명 요청시 반환된 접수아이디
+    String receiptID = "0230310165612000000000000000000000000001";
     
-    VerifyAuthStateResult result = null;
+    BulkResultESignState result = null;
 
     try {
     	
-    	result = kakaocertService.getVerifyAuthState(clientCode, receiptID);
+    	result = kakaocertService.getBulkESignState(clientCode, receiptID);
          
     } catch(BarocertException ke) {
         throw ke;
@@ -37,7 +37,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>본인인증 상태확인</legend>
+                <legend>전자서명 상태요청(다건)</legend>
                 <ul>
                     <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
                     <li>요청 아이디 (RequestID) : <%=result.getRequestID()%></li>

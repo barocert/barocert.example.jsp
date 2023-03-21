@@ -3,110 +3,68 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/main.css" media="screen" />
-		<title>Kakaocert SDK jsp Example.</title>
+		<title>Barocert Kakaocert Service jsp Example.</title>
 	</head>
 
 <%@ include file="common.jsp" %>
-
-<%@page import="com.kakaocert.api.cms.RequestCMS"%>
-<%@page import="com.kakaocert.api.KakaocertException"%>
-<%@page import="com.kakaocert.api.ResponseCMS"%>
+<%@page import="com.barocert.BarocertException"%>
+<%@page import="com.barocert.kakaocert.cms.RequestCMS"%>
+<%@page import="com.barocert.kakaocert.cms.ResultCMS"%>
 
 <%
-    /*
-     * 카카오톡 사용자에게 자동이체 출금동의 서명을 요청합니다.
-     * - https://www.kakaocert.com/docs/CMS/API/java#RequestCMS
-     */
+	/*
+	 * 카카오톡 사용자에게 자동이체 출금동의 전자서명을 요청합니다.
+	 * - https://requestCMS
+	 */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
-    String ClientCode = "020040000001";
-    
+    String clientCode = "023020000003";
+
     // AppToApp 인증요청 여부
     // true - AppToApp 인증방식, false - Talk Message 인증방식
     boolean isAppUseYN = false;
 
-    // 자동이체 출금동의 요청 정보 Object
+    // 출금동의 요청 정보 Object
     RequestCMS cmsRequest = new RequestCMS();
-
-    // 고객센터 전화번호, 카카오톡 인증메시지 중 "고객센터" 항목에 표시
-    cmsRequest.setCallCenterNum("1600-9999");
+	
+	// 수신자 정보(휴대폰번호, 성명, 생년월일)와 Ci 값 중 택일
+	cmsRequest.setReceiverHP(kakaocertService.AES256Encrypt("01087674117"));
+	cmsRequest.setReceiverName(kakaocertService.AES256Encrypt("이승환"));
+	cmsRequest.setReceiverBirthday(kakaocertService.AES256Encrypt("19930112"));
+	// cmsRequest.setCi(kakaocertService.AES256Encrypt("");
+	
+	cmsRequest.setReqTitle("인증요청 메시지 제공란");
+	cmsRequest.setExpireIn(1000);
+	
+	cmsRequest.setRequestCorp(kakaocertService.AES256Encrypt("청구 기관명란"));
+	cmsRequest.setBankName(kakaocertService.AES256Encrypt("출금은행명란"));
+	cmsRequest.setBankAccountNum(kakaocertService.AES256Encrypt("9-4324-5117-58"));
+	cmsRequest.setBankAccountName(kakaocertService.AES256Encrypt("예금주명 입력란"));
+	cmsRequest.setBankAccountBirthday(kakaocertService.AES256Encrypt("19930112"));
+	cmsRequest.setBankServiceType(kakaocertService.AES256Encrypt("CMS")); // CMS, FIRM, GIRO
+	
+	// App to App 방식 이용시, 에러시 호출할 URL
+	// cmsRequest.setReturnURL("https://kakao.barocert.com");
     
-    // 고객센터명, 카카오톡 인증메시지 중 "고객센터명" 항목에 표시
-    cmsRequest.setCallCenterName("고객센터명");
-
-    // 인증요청 만료시간(초), 최대값 : 1000,	인증요청 만료시간(초) 내에 미인증시, 만료 상태로 처리됨
-    cmsRequest.setExpires_in(60);
-
-    // 수신자 생년월일, 형식 : YYYYMMDD
-    cmsRequest.setReceiverBirthDay("19700101");
-
-    // 수신자 휴대폰번호
-    cmsRequest.setReceiverHP("01012341234");
-
-    // 수신자 성명
-    cmsRequest.setReceiverName("홍길동");
-
-    // 예금주명
-    cmsRequest.setBankAccountName("예금주명");
-
-    // 계좌번호, 이용기관은 사용자가 식별가능한 범위내에서 계좌번호의 일부를 마스킹 처리할 수 있음 예시) 371-02-6***85
-    cmsRequest.setBankAccountNum("9-4**4-1234-58");
-
-    // 참가기관 코드
-    cmsRequest.setBankCode("004");
-
-    // 납부자 식별번호, 이용기관에서 부여한 고객식별번호
-    cmsRequest.setClientUserID("20220504-001");
-
-    // 인증요청 메시지 부가내용, 카카오톡 인증메시지 중 상단에 표시
-    cmsRequest.setTMSMessage("부가메시지 내용");
-
-    // 별칭코드, 이용기관이 생성한 별칭코드 (파트너 사이트에서 확인가능)
-    // 카카오톡 인증메시지 중 "요청기관" 항목에 표시
-    // 별칭코드 미 기재시 이용기관의 이용기관명이 "요청기관" 항목에 표시
-    cmsRequest.setSubClientID("");
-
-    // 인증요청 메시지 제목, 카카오톡 인증메시지 중 "요청구분" 항목에 표시
-    cmsRequest.setTMSTitle("TMS Title");
-
-    /*
-     * 은행계좌 실명확인 생략여부
-     * true : 은행계좌 실명확인 절차를 생략
-     * false : 은행계좌 실명확인 절차를 진행
-     *
-     * - 인증메시지를 수신한 사용자가 카카오인증 비회원일 경우,
-     *   카카오인증 회원등록 절차를 거쳐 은행계좌 실명확인 절차이후 전자서명 가능
-     */
-     cmsRequest.setAllowSimpleRegistYN(false);
-
-    /*
-     * 수신자 실명확인 여부
-     * true : 카카오페이가 본인인증을 통해 확보한 사용자 실명과 ReceiverName 값을 비교
-     * false : 카카오페이가 본인인증을 통해 확보한 사용자 실명과 RecevierName 값을 비교하지 않음.
-     */
-    cmsRequest.setVerifyNameYN(true);
-
-    // PayLoad, 이용기관이 API 요청마다 생성한 payload(메모) 값
-    cmsRequest.setPayLoad("memo Info");
-
-    ResponseCMS result = null;
+	ResultCMS result = null;
 
     try {
-        result = kakaocertService.requestCMS(ClientCode, cmsRequest, isAppUseYN);
-    } catch(KakaocertException ke) {
+    	
+    	result = kakaocertService.requestCMS(clientCode, cmsRequest, isAppUseYN);
+         
+    } catch(BarocertException ke) {
         throw ke;
-    }
-
+  }
 %>
     <body>
         <div id="content">
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>자동이체 출금동의 서명요청</legend>
+                <legend>출금동의 요청</legend>
                 <ul>
                     <li>접수아이디 (receiptId) : <%=result.getReceiptId()%></li>
-                    <li>카카오톡 트랜잭션아이디 (tx_id)[AppToApp 앱스킴 호출용] : <%=result.getTx_id()%></li>
+                    <li>앱스킴 (scheme)[AppToApp 앱스킴 호출용] : <%=result.getScheme()%></li>
                 </ul>
             </fieldset>
         </div>
