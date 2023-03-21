@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>barocert.example.jsp</name>
+	<comment></comment>
+	<projects>
+		<project>barocert.sdk.java</project>
+		<project>linkhub.auth.java</project>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+</projectDescription>
