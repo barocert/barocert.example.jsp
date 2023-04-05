@@ -3,31 +3,30 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/main.css" media="screen" />
-		<title>Barocert Kakaocert Service jsp Example.</title>
+		<title>Barocert Service jsp Example</title>
 	</head>
 
 <%@ include file="common.jsp" %>
 
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.cms.ResultCMSState"%>
+<%@page import="com.barocert.kakaocert.esign.ResponseStateESign"%>
 
 <%
 	/*
-	 * 자동이체 출금동의 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
-	 * - https://getCMSState
+	 * 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다. (단건)
 	 */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
-    String clientCode = "023030000003";
+    String clientCode = "023030000004";
 
     // 전자서명 요청시 반환된 접수아이디
-    String receiptID = "0230322082206000000000000000000000000001";
+    String receiptID = "02304050230300000040000000000007";
     
-    ResultCMSState result = null;
+    ResponseStateESign result = null;
 
     try {
     	
-    	result = kakaocertService.getCMSState(clientCode, receiptID);
+    	result = kakaocertService.stateESign(clientCode, receiptID);
          
     } catch(BarocertException ke) {
         throw ke;
@@ -38,7 +37,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>출금동의 상태확인</legend>
+                <legend>전자서명 요청(단건)</legend>
                 <ul>
                     <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
                     <li>이용기관 코드 (ClientCode) : <%=result.getClientCode()%></li>
@@ -55,8 +54,8 @@
                     <li>서명완료일시 (CompleteDT) : <%=result.getCompleteDT()%></li>
                     <li>서명만료일시 (ExpireDT) : <%=result.getExpireDT()%></li>
                     <li>서명검증일시 (VerifyDT) : <%=result.getVerifyDT()%></li>
-                    <li>앱스킴 (Scheme)[AppToApp 앱스킴 호출용] : <%=result.getScheme()%></li>
-                    <li>앱사용유무 (AppUseYN) : <%=result.isAppUseYN()%></li>
+                    <li>앱스킴 (Scheme) : <%=result.getScheme()%></li>
+                    <li>앱사용유무 (AppUseYN) : <%=result.getAppUseYN()%></li>
                 </ul>
             </fieldset>
         </div>

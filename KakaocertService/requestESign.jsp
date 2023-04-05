@@ -9,47 +9,49 @@
 <%@ include file="common.jsp" %>
 
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.verifyauth.RequestVerifyAuth"%>
-<%@page import="com.barocert.kakaocert.verifyauth.ResponseVerifyAuth"%>
+<%@page import="com.barocert.kakaocert.esign.RequestESign"%>
+<%@page import="com.barocert.kakaocert.esign.ResponseESign"%>
 
 <%
 	/*
-	 * 카카오톡 사용자에게 본인인증 전자서명을 요청합니다.
-	 * - https://requestVerifyAuth
+	 * 카카오톡 사용자에게 전자서명을 요청합니다.(단건)
 	 */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
 
-    // 본인인증 요청 정보 객체
-    RequestVerifyAuth verifyAuthRequest = new RequestVerifyAuth();
+    // 전자서명 요청 정보 객체
+    RequestESign eSignRequest = new RequestESign();
 
     // 수신자 정보
     // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
-    verifyAuthRequest.setReceiverHP(kakaocertService.encryptGCM("01054437896"));
-    verifyAuthRequest.setReceiverName(kakaocertService.encryptGCM("최상혁"));
-    verifyAuthRequest.setReceiverBirthday(kakaocertService.encryptGCM("19880301"));
+    eSignRequest.setReceiverHP(kakaocertService.encryptGCM("01054437896"));
+    eSignRequest.setReceiverName(kakaocertService.encryptGCM("최상혁"));
+    eSignRequest.setReceiverBirthday(kakaocertService.encryptGCM("19880301"));
     // request.setCi(kakaocertService.encryptGCM(""));
 
     // 인증요청 메시지 제목 - 최대 40자
-    verifyAuthRequest.setReqTitle("인증요청 메시지 제목란");
+    eSignRequest.setReqTitle("전자서명단건테스트");
     // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
-    verifyAuthRequest.setExpireIn(1000);
-    // 서명 원문 - 최대 2,800자 까지 입력가능
-    verifyAuthRequest.setToken(kakaocertService.encryptGCM("본인인증요청토큰"));
+    eSignRequest.setExpireIn(1000);
+    // 서명 원문 - 원문 2,800자 까지 입력가능
+    eSignRequest.setToken(kakaocertService.encryptGCM("전자서명단건테스트데이터"));
+    // 서명 원문 유형
+    // TEXT - 일반 텍스트, HASH - HASH 데이터
+    eSignRequest.setTokenType("TEXT");
 
     // AppToApp 인증요청 여부
     // true - AppToApp 인증방식, false - Talk Message 인증방식
-    verifyAuthRequest.setAppUseYN(false);
+    eSignRequest.setAppUseYN(false);
 
     // App to App 방식 이용시, 호출할 URL
-    // verifyAuthRequest.setReturnURL("https://www.kakaocert.com");
+    // eSignRequest.setReturnURL("https://www.kakaocert.com");
     
-    ResponseVerifyAuth result = null;
+    ResponseESign result = null;
 
     try {
     	
-    	result = kakaocertService.requestVerifyAuth(clientCode, verifyAuthRequest);
+    	result = kakaocertService.requestESign(clientCode, eSignRequest);
          
     } catch(BarocertException ke) {
         throw ke;
@@ -60,7 +62,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>카카오 본인인증 요청</legend>
+                <legend>카카오 전자서명 요청(단건)</legend>
                 <ul>
                     <li>접수아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
                     <li>앱스킴 (scheme) : <%=result.getScheme()%></li>

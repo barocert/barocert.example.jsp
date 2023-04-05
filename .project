@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>barocert.example.jsp</name>
+	<name>barocert.Examplejsp</name>
 	<comment></comment>
 	<projects>
 		<project>barocert.sdk.java</project>
