@@ -20,7 +20,7 @@
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
 
-    // 전자서명 요청시 반환된 접수아이디
+    // 본인인증 요청시 반환된 접수아이디
     String receiptID = "02304050230300000040000000000003";
     
     ResponseVerifyVerifyAuth result = null;
