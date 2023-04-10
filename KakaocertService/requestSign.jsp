@@ -9,8 +9,8 @@
 <%@ include file="common.jsp" %>
 
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.esign.RequestESign"%>
-<%@page import="com.barocert.kakaocert.esign.ResponseESign"%>
+<%@page import="com.barocert.kakaocert.sign.RequestSign"%>
+<%@page import="com.barocert.kakaocert.sign.ResponseSign"%>
 
 <%
 	/*
@@ -21,21 +21,21 @@
     String clientCode = "023030000004";
 
     // 전자서명 요청 정보 객체
-    RequestESign eSignRequest = new RequestESign();
+    RequestSign eSignRequest = new RequestSign();
 
     // 수신자 정보
     // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
-    eSignRequest.setReceiverHP(kakaocertService.encryptGCM("01054437896"));
-    eSignRequest.setReceiverName(kakaocertService.encryptGCM("최상혁"));
-    eSignRequest.setReceiverBirthday(kakaocertService.encryptGCM("19880301"));
-    // request.setCi(kakaocertService.encryptGCM(""));
+    eSignRequest.setReceiverHP(kakaocertService.encrypt("01054437896"));
+    eSignRequest.setReceiverName(kakaocertService.encrypt("최상혁"));
+    eSignRequest.setReceiverBirthday(kakaocertService.encrypt("19880301"));
+    // request.setCi(kakaocertService.encrypt(""));
 
     // 인증요청 메시지 제목 - 최대 40자
     eSignRequest.setReqTitle("전자서명단건테스트");
     // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
     eSignRequest.setExpireIn(1000);
     // 서명 원문 - 원문 2,800자 까지 입력가능
-    eSignRequest.setToken(kakaocertService.encryptGCM("전자서명단건테스트데이터"));
+    eSignRequest.setToken(kakaocertService.encrypt("전자서명단건테스트데이터"));
     // 서명 원문 유형
     // TEXT - 일반 텍스트, HASH - HASH 데이터
     eSignRequest.setTokenType("TEXT");
@@ -47,11 +47,11 @@
     // App to App 방식 이용시, 호출할 URL
     // eSignRequest.setReturnURL("https://www.kakaocert.com");
     
-    ResponseESign result = null;
+    ResponseSign result = null;
 
     try {
     	
-    	result = kakaocertService.requestESign(clientCode, eSignRequest);
+    	result = kakaocertService.requestSign(clientCode, eSignRequest);
          
     } catch(BarocertException ke) {
         throw ke;

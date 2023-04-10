@@ -23,8 +23,8 @@
 <%-- 인증토큰 발급 IP 제한 On/Off, true-사용, false-미사용  기본값(true)--%>
 <jsp:setProperty name="kakaocertService" property="IPRestrictOnOff" value="true"/>
 
-<%-- 인증토큰 발급 IP 제한 On/Off, true-사용, false-미사용  기본값(true)--%>
-<jsp:setProperty name="kakaocertService" property="IPRestrictOnOff" value="true"/>
+<%-- Barocert API 서비스 고정 IP 사용여부, true-사용, false-미사용, 기본값(false) --%>
+<jsp:setProperty name="kakaocertService" property="useStaticIP" value="false"/>
 
 <%-- 로컬시스템 시간 사용여부 true-사용, false-미사용, 기본값(true) --%>
 <jsp:setProperty name="kakaocertService" property="useLocalTimeYN" value="true"/>

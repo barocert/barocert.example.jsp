@@ -11,10 +11,10 @@
 <%@ include file="common.jsp" %>
 
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.esign.RequestESign"%>
-<%@page import="com.barocert.kakaocert.esign.ResponseMultiESign"%>
-<%@page import="com.barocert.kakaocert.esign.RequestMultiESign"%>
-<%@page import="com.barocert.kakaocert.esign.MultiESignTokens"%>
+<%@page import="com.barocert.kakaocert.sign.RequestSign"%>
+<%@page import="com.barocert.kakaocert.sign.ResponseMultiSign"%>
+<%@page import="com.barocert.kakaocert.sign.RequestMultiSign"%>
+<%@page import="com.barocert.kakaocert.sign.MultiSignTokens"%>
 
 <%
 	/*
@@ -26,14 +26,14 @@
     String clientCode = "023030000004";
 
     // 전자서명 요청 정보 객체
-    RequestMultiESign multiESignRequest = new RequestMultiESign();
+    RequestMultiSign multiESignRequest = new RequestMultiSign();
 
     // 수신자 정보
     // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
-    multiESignRequest.setReceiverHP(kakaocertService.encryptGCM("01054437896"));
-    multiESignRequest.setReceiverName(kakaocertService.encryptGCM("최상혁"));
-    multiESignRequest.setReceiverBirthday(kakaocertService.encryptGCM("19880301"));
-    // multiESignRequest.setCi(kakaocertService.encryptGCM(""));
+    multiESignRequest.setReceiverHP(kakaocertService.encrypt("01054437896"));
+    multiESignRequest.setReceiverName(kakaocertService.encrypt("최상혁"));
+    multiESignRequest.setReceiverBirthday(kakaocertService.encrypt("19880301"));
+    // multiESignRequest.setCi(kakaocertService.encrypt(""));
 
     // 인증요청 메시지 제목 - 최대 40자
     multiESignRequest.setReqTitle("전자서명복수테스트");
@@ -42,19 +42,19 @@
 
     // 개별문서 등록 - 최대 20 건
     // 개별 요청 정보 객체
-    MultiESignTokens token = new MultiESignTokens();
+    MultiSignTokens token = new MultiSignTokens();
     // 인증요청 메시지 제목 - 최대 40자
     token.setReqTitle("전자서명복수문서테스트1");
     // 서명 원문 - 원문 2,800자 까지 입력가능
-    token.setToken(kakaocertService.encryptGCM("전자서명복수테스트데이터1"));
+    token.setToken(kakaocertService.encrypt("전자서명복수테스트데이터1"));
     multiESignRequest.addToken(token);
 
     // 개별 요청 정보 객체
-    MultiESignTokens token2 = new MultiESignTokens();
+    MultiSignTokens token2 = new MultiSignTokens();
     // 인증요청 메시지 제목 - 최대 40자
     token2.setReqTitle("전자서명복수문서테스트2");
     // 서명 원문 - 원문 2,800자 까지 입력가능
-    token2.setToken(kakaocertService.encryptGCM("전자서명복수테스트데이터2"));
+    token2.setToken(kakaocertService.encrypt("전자서명복수테스트데이터2"));
     multiESignRequest.addToken(token2);
 
     // 서명 원문 유형
@@ -68,11 +68,11 @@
 // App to App 방식 이용시, 에러시 호출할 URL
 // request.setReturnURL("https://www.kakaocert.com");
     
-    ResponseMultiESign result = null;
+    ResponseMultiSign result = null;
 
     try {
     	
-    	result = kakaocertService.requestMultiESign(clientCode, multiESignRequest);
+    	result = kakaocertService.requestMultiSign(clientCode, multiESignRequest);
          
     } catch(BarocertException ke) {
         throw ke;

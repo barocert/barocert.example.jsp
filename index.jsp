@@ -13,21 +13,21 @@
     <fieldset class="fieldset1">
         <legend>본인인증 API</legend>
         <ul>
-            <li><a href="KakaocertService/requestVerifyAuth.jsp">RequestVerifyAuth</a> - 본인인증 요청</li>
-            <li><a href="KakaocertService/stateVerifyAuth.jsp">StateVerifyAuth</a> - 본인인증 상태확인</li>
-            <li><a href="KakaocertService/verifyVerifyAuth.jsp">VerifyVerifyAuth</a> - 본인인증 검증</li>
+            <li><a href="KakaocertService/requestIdentity.jsp">RequestIdentityAuth</a> - 본인인증 요청</li>
+            <li><a href="KakaocertService/getIdentityStatus.jsp">getIdentityStatus</a> - 본인인증 상태확인</li>
+            <li><a href="KakaocertService/verifyIdentity.jsp">VerifyIdentity</a> - 본인인증 검증</li>
         </ul>
     </fieldset>
     
     <fieldset class="fieldset1">
         <legend>전자서명 API</legend>
         <ul>
-            <li><a href="KakaocertService/requestESign.jsp">RequestESign</a> - 전자서명 요청(단건)</li>
-            <li><a href="KakaocertService/stateESign.jsp">StateESign</a> - 전자서명 상태확인(단건)</li>
-            <li><a href="KakaocertService/verifyESign.jsp">VerifyESign</a> - 전자서명 검증(단건)</li>
-            <li><a href="KakaocertService/requestMultiESign.jsp">RequestMultiESign</a> - 전자서명 요청(다건)</li>
-            <li><a href="KakaocertService/stateMultiESign.jsp">StateMultiESign</a> - 전자서명 상태확인(다건)</li>
-            <li><a href="KakaocertService/verifyMultiESign.jsp">VerifyMultiESign</a> - 전자서명 검증(다건)</li>
+            <li><a href="KakaocertService/requestSign.jsp">RequestSign</a> - 전자서명 요청(단건)</li>
+            <li><a href="KakaocertService/getSignStatus.jsp">GetSignStatus</a> - 전자서명 상태확인(단건)</li>
+            <li><a href="KakaocertService/verifySign.jsp">VerifySign</a> - 전자서명 검증(단건)</li>
+            <li><a href="KakaocertService/requestMultiSign.jsp">RequestMultiSign</a> - 전자서명 요청(다건)</li>
+            <li><a href="KakaocertService/getMultiSignStatus.jsp">GetMultiSignStatus</a> - 전자서명 상태확인(다건)</li>
+            <li><a href="KakaocertService/verifyMultiSign.jsp">VerifyMultiSign</a> - 전자서명 검증(다건)</li>
         </ul>
     </fieldset>
 
@@ -35,7 +35,7 @@
         <legend>출금동의 API</legend>
         <ul>
             <li><a href="KakaocertService/requestCMS.jsp">RequestCMS</a> - 출금동의 요청</li>
-            <li><a href="KakaocertService/stateCMS.jsp">StateCMS</a> - 출금동의 상태확인</li>
+            <li><a href="KakaocertService/getCMSStatus.jsp">GetCMSStatus</a> - 출금동의 상태확인</li>
             <li><a href="KakaocertService/verifyCMS.jsp">VerifyCMS</a> - 출금동의 검증</li>
         </ul>
     </fieldset>

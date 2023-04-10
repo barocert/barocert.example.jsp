@@ -27,10 +27,10 @@
 	
     // 수신자 정보
     // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
-    cmsRequest.setReceiverHP(kakaocertService.encryptGCM("01054437896"));
-    cmsRequest.setReceiverName(kakaocertService.encryptGCM("최상혁"));
-    cmsRequest.setReceiverBirthday(kakaocertService.encryptGCM("19880301"));
-    // cmsRequest.setCi(kakaocertService.encryptGCM("");
+    cmsRequest.setReceiverHP(kakaocertService.encrypt("01054437896"));
+    cmsRequest.setReceiverName(kakaocertService.encrypt("최상혁"));
+    cmsRequest.setReceiverBirthday(kakaocertService.encrypt("19880301"));
+    // cmsRequest.setCi(kakaocertService.encrypt("");
 
     // 인증요청 메시지 제목 - 최대 40자
     cmsRequest.setReqTitle("인증요청 메시지 제공란");
@@ -39,18 +39,18 @@
     cmsRequest.setExpireIn(1000);
 
     // 청구기관명 - 최대 100자
-    cmsRequest.setRequestCorp(kakaocertService.encryptGCM("청구기관명란"));
+    cmsRequest.setRequestCorp(kakaocertService.encrypt("청구기관명란"));
     // 출금은행명 - 최대 100자
-    cmsRequest.setBankName(kakaocertService.encryptGCM("출금은행명란"));
+    cmsRequest.setBankName(kakaocertService.encrypt("출금은행명란"));
     // 출금계좌번호 - 최대 32자
-    cmsRequest.setBankAccountNum(kakaocertService.encryptGCM("9-4324-5117-58"));
+    cmsRequest.setBankAccountNum(kakaocertService.encrypt("9-4324-5117-58"));
     // 출금계좌 예금주명 - 최대 100자
-    cmsRequest.setBankAccountName(kakaocertService.encryptGCM("예금주명 입력란"));
+    cmsRequest.setBankAccountName(kakaocertService.encrypt("예금주명 입력란"));
     // 출금계좌 예금주 생년월일 - 8자
-    cmsRequest.setBankAccountBirthday(kakaocertService.encryptGCM("19930112"));
+    cmsRequest.setBankAccountBirthday(kakaocertService.encrypt("19930112"));
     // 출금유형
     // CMS - 출금동의용, FIRM - 펌뱅킹, GIRO - 지로용
-    cmsRequest.setBankServiceType(kakaocertService.encryptGCM("CMS")); // CMS, FIRM, GIRO
+    cmsRequest.setBankServiceType(kakaocertService.encrypt("CMS")); // CMS, FIRM, GIRO
 
     // AppToApp 인증요청 여부
     // true - AppToApp 인증방식, false - Talk Message 인증방식
