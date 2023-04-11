@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/main.css" media="screen" />
-		<title>Barocert Service jsp Example</title>
-	</head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/main.css" media="screen" />
+        <title>Barocert Service jsp Example</title>
+    </head>
 
 <%@page import="java.util.ArrayList"%>
 
@@ -17,10 +17,10 @@
 <%@page import="com.barocert.kakaocert.sign.MultiSignTokens"%>
 
 <%
-	/*
-	 * 카카오톡 사용자에게 전자서명을 요청합니다.(다건)
-	 * - https://bulkRequestESign
-	 */
+    /*
+     * 카카오톡 사용자에게 전자서명을 요청합니다.(다건)
+     * - https://bulkRequestESign
+     */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
@@ -71,8 +71,8 @@
     ResponseMultiSign result = null;
 
     try {
-    	
-    	result = kakaocertService.requestMultiSign(clientCode, multiESignRequest);
+        
+        result = kakaocertService.requestMultiSign(clientCode, multiESignRequest);
          
     } catch(BarocertException ke) {
         throw ke;

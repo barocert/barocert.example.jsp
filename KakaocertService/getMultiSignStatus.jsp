@@ -1,11 +1,11 @@
 <%@page import="com.barocert.kakaocert.sign.ResponseMultiSignStatus"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/main.css" media="screen" />
-		<title>Barocert Service jsp Example</title>
-	</head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/main.css" media="screen" />
+        <title>Barocert Service jsp Example</title>
+    </head>
 
 <%@ include file="common.jsp" %>
 
@@ -14,8 +14,8 @@
 
 <%
 /*
-	 * 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다. (복수)
-	 */
+     * 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다. (복수)
+     */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
@@ -26,8 +26,8 @@
     ResponseMultiSignStatus result = null;
 
     try {
-    	
-    	result = kakaocertService.getMultiSignStatus(clientCode, receiptID);
+        
+        result = kakaocertService.getMultiSignStatus(clientCode, receiptID);
          
     } catch(BarocertException ke) {
         throw ke;
