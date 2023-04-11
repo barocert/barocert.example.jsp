@@ -1,4 +1,4 @@
-barocert.Examplejsp
+barocert.Example.jsp
 =========================
 
 Barocert SDK Example for jsp.
