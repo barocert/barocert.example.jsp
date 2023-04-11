@@ -13,7 +13,7 @@
     <fieldset class="fieldset1">
         <legend>본인인증 API</legend>
         <ul>
-            <li><a href="KakaocertService/requestIdentity.jsp">RequestIdentityAuth</a> - 본인인증 요청</li>
+            <li><a href="KakaocertService/requestIdentity.jsp">RequestIdentity</a> - 본인인증 요청</li>
             <li><a href="KakaocertService/getIdentityStatus.jsp">getIdentityStatus</a> - 본인인증 상태확인</li>
             <li><a href="KakaocertService/verifyIdentity.jsp">VerifyIdentity</a> - 본인인증 검증</li>
         </ul>
