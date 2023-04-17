@@ -9,11 +9,11 @@
 <%@ include file="common.jsp" %>
 
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.cms.ResponseCMSStatus"%>
+<%@page import="com.barocert.kakaocert.cms.CMSStatus"%>
 
 <%
 /*
-     * 카카오 출금동의 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
+     * 출금동의 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
@@ -22,7 +22,7 @@
     // 출금동의 요청시 반환된 접수아이디
     String receiptID = "02304050230300000040000000000008";
     
-    ResponseCMSStatus result = null;
+    CMSStatus result = null;
 
     try {
         

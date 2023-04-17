@@ -9,20 +9,19 @@
 <%@ include file="common.jsp" %>
 
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.identity.RequestIdentity"%>
-<%@page import="com.barocert.kakaocert.identity.ResponseIdentity"%>
+<%@page import="com.barocert.kakaocert.identity.Identity"%>
+<%@page import="com.barocert.kakaocert.identity.IdentityReceipt"%>
 
 <%
 /*
      * 카카오톡 사용자에게 본인인증 전자서명을 요청합니다.
-     * - https://requestVerifyAuth
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
 
     // 본인인증 요청 정보 객체
-    RequestIdentity verifyAuthRequest = new RequestIdentity();
+    Identity verifyAuthRequest = new Identity();
 
     // 수신자 정보
     // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
@@ -45,7 +44,7 @@
     // App to App 방식 이용시, 호출할 URL
     // verifyAuthRequest.setReturnURL("https://www.kakaocert.com");
     
-    ResponseIdentity result = null;
+    IdentityReceipt result = null;
 
     try {
         

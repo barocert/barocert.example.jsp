@@ -9,7 +9,7 @@
 <%@ include file="common.jsp" %>
 
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.identity.ResponseIdentityStatus"%>
+<%@page import="com.barocert.kakaocert.identity.IdentityStatus"%>
 
 <%
 /*
@@ -22,7 +22,7 @@
     // 본인인증 요청시 반환된 접수아이디
     String receiptID = "02304050230300000040000000000003";
     
-    ResponseIdentityStatus result = null;
+    IdentityStatus result = null;
 
     try {
         

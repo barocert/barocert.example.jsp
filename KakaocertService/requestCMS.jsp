@@ -9,21 +9,17 @@
 <%@ include file="common.jsp" %>
 
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.cms.RequestCMS"%>
-<%@page import="com.barocert.kakaocert.cms.ResponseCMS"%>
+<%@page import="com.barocert.kakaocert.cms.CMS"%>
+<%@page import="com.barocert.kakaocert.cms.CMSReceipt"%>
 
 <%
-    // 카카오톡 사용자에게 출금동의 전자서명을 요청합니다.
+// 카카오톡 사용자에게 출금동의 전자서명을 요청합니다.
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
 
-    // AppToApp 인증요청 여부
-    // true - AppToApp 인증방식, false - Talk Message 인증방식
-    boolean isAppUseYN = false;
-
     // 출금동의 요청 정보 객체
-    RequestCMS cmsRequest = new RequestCMS();
+    CMS cmsRequest = new CMS();
     
     // 수신자 정보
     // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
@@ -59,7 +55,7 @@
     // App to App 방식 이용시, 에러시 호출할 URL
     // request.setReturnURL("https://www.kakaocert.com");
     
-    ResponseCMS result = null;
+   CMSReceipt result = null;
 
     try {
         

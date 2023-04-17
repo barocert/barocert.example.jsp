@@ -9,7 +9,7 @@
 <%@ include file="common.jsp" %>
 
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.sign.ResponseSignStatus"%>
+<%@page import="com.barocert.kakaocert.sign.SignStatus"%>
 
 <%
 /*
@@ -22,7 +22,7 @@
     // 전자서명 요청시 반환된 접수아이디
     String receiptID = "02304050230300000040000000000007";
     
-    ResponseSignStatus result = null;
+   SignStatus result = null;
 
     try {
         

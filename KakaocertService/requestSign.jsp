@@ -9,11 +9,11 @@
 <%@ include file="common.jsp" %>
 
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.sign.RequestSign"%>
-<%@page import="com.barocert.kakaocert.sign.ResponseSign"%>
+<%@page import="com.barocert.kakaocert.sign.Sign"%>
+<%@page import="com.barocert.kakaocert.sign.SignReceipt"%>
 
 <%
-    /*
+/*
      * 카카오톡 사용자에게 전자서명을 요청합니다.(단건)
      */
 
@@ -21,7 +21,7 @@
     String clientCode = "023030000004";
 
     // 전자서명 요청 정보 객체
-    RequestSign eSignRequest = new RequestSign();
+    Sign eSignRequest = new Sign();
 
     // 수신자 정보
     // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
@@ -47,7 +47,7 @@
     // App to App 방식 이용시, 호출할 URL
     // eSignRequest.setReturnURL("https://www.kakaocert.com");
     
-    ResponseSign result = null;
+    SignReceipt result = null;
 
     try {
         

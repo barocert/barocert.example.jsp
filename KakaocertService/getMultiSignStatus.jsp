@@ -1,4 +1,4 @@
-<%@page import="com.barocert.kakaocert.sign.ResponseMultiSignStatus"%>
+<%@page import="com.barocert.kakaocert.sign.MultiSignStatus"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -10,7 +10,7 @@
 <%@ include file="common.jsp" %>
 
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.sign.ResponseVerifyMultiSign"%>
+<%@page import="com.barocert.kakaocert.sign.MultiSignStatus"%>
 
 <%
 /*
@@ -23,7 +23,7 @@
     // 전자서명 요청시 반환된 접수아이디
     String receiptID = "02304050230300000040000000000006";
     
-    ResponseMultiSignStatus result = null;
+    MultiSignStatus result = null;
 
     try {
         

@@ -11,22 +11,21 @@
 <%@ include file="common.jsp" %>
 
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.sign.RequestSign"%>
-<%@page import="com.barocert.kakaocert.sign.ResponseMultiSign"%>
-<%@page import="com.barocert.kakaocert.sign.RequestMultiSign"%>
+<%@page import="com.barocert.kakaocert.sign.Sign"%>
+<%@page import="com.barocert.kakaocert.sign.MultiSignReceipt"%>
+<%@page import="com.barocert.kakaocert.sign.MultiSign"%>
 <%@page import="com.barocert.kakaocert.sign.MultiSignTokens"%>
 
 <%
-    /*
-     * 카카오톡 사용자에게 전자서명을 요청합니다.(다건)
-     * - https://bulkRequestESign
+/*
+     * 카카오톡 사용자에게 전자서명을 요청합니다.(복수)
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
 
     // 전자서명 요청 정보 객체
-    RequestMultiSign multiESignRequest = new RequestMultiSign();
+    MultiSign multiESignRequest = new MultiSign();
 
     // 수신자 정보
     // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
@@ -65,10 +64,10 @@
     // true - AppToApp 인증방식, false - Talk Message 인증방식
     multiESignRequest.setAppUseYN(false);
 
-// App to App 방식 이용시, 에러시 호출할 URL
-// request.setReturnURL("https://www.kakaocert.com");
+    // App to App 방식 이용시, 에러시 호출할 URL
+    // request.setReturnURL("https://www.kakaocert.com");
     
-    ResponseMultiSign result = null;
+    MultiSignReceipt result = null;
 
     try {
         
