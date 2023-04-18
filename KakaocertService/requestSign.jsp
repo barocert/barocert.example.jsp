@@ -21,37 +21,37 @@
     String clientCode = "023030000004";
 
     // 전자서명 요청 정보 객체
-    Sign eSignRequest = new Sign();
+    Sign sign = new Sign();
 
     // 수신자 정보
     // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
-    eSignRequest.setReceiverHP(kakaocertService.encrypt("01054437896"));
-    eSignRequest.setReceiverName(kakaocertService.encrypt("최상혁"));
-    eSignRequest.setReceiverBirthday(kakaocertService.encrypt("19880301"));
+    sign.setReceiverHP(kakaocertService.encrypt("01054437896"));
+    sign.setReceiverName(kakaocertService.encrypt("최상혁"));
+    sign.setReceiverBirthday(kakaocertService.encrypt("19880301"));
     // request.setCi(kakaocertService.encrypt(""));
 
     // 인증요청 메시지 제목 - 최대 40자
-    eSignRequest.setReqTitle("전자서명단건테스트");
+    sign.setReqTitle("전자서명단건테스트");
     // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
-    eSignRequest.setExpireIn(1000);
+    sign.setExpireIn(1000);
     // 서명 원문 - 원문 2,800자 까지 입력가능
-    eSignRequest.setToken(kakaocertService.encrypt("전자서명단건테스트데이터"));
+    sign.setToken(kakaocertService.encrypt("전자서명단건테스트데이터"));
     // 서명 원문 유형
     // TEXT - 일반 텍스트, HASH - HASH 데이터
-    eSignRequest.setTokenType("TEXT");
+    sign.setTokenType("TEXT");
 
     // AppToApp 인증요청 여부
     // true - AppToApp 인증방식, false - Talk Message 인증방식
-    eSignRequest.setAppUseYN(false);
+    sign.setAppUseYN(false);
 
     // App to App 방식 이용시, 호출할 URL
-    // eSignRequest.setReturnURL("https://www.kakaocert.com");
+    // sign.setReturnURL("https://www.kakaocert.com");
     
     SignReceipt result = null;
 
     try {
         
-        result = kakaocertService.requestSign(clientCode, eSignRequest);
+        result = kakaocertService.requestSign(clientCode, sign);
          
     } catch(BarocertException ke) {
         throw ke;

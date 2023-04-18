@@ -25,19 +25,19 @@
     String clientCode = "023030000004";
 
     // 전자서명 요청 정보 객체
-    MultiSign multiESignRequest = new MultiSign();
+    MultiSign multiSign = new MultiSign();
 
     // 수신자 정보
     // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
-    multiESignRequest.setReceiverHP(kakaocertService.encrypt("01054437896"));
-    multiESignRequest.setReceiverName(kakaocertService.encrypt("최상혁"));
-    multiESignRequest.setReceiverBirthday(kakaocertService.encrypt("19880301"));
-    // multiESignRequest.setCi(kakaocertService.encrypt(""));
+    multiSign.setReceiverHP(kakaocertService.encrypt("01054437896"));
+    multiSign.setReceiverName(kakaocertService.encrypt("최상혁"));
+    multiSign.setReceiverBirthday(kakaocertService.encrypt("19880301"));
+    // multiSign.setCi(kakaocertService.encrypt(""));
 
     // 인증요청 메시지 제목 - 최대 40자
-    multiESignRequest.setReqTitle("전자서명복수테스트");
+    multiSign.setReqTitle("전자서명복수테스트");
     // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
-    multiESignRequest.setExpireIn(1000);
+    multiSign.setExpireIn(1000);
 
     // 개별문서 등록 - 최대 20 건
     // 개별 요청 정보 객체
@@ -46,7 +46,7 @@
     token.setReqTitle("전자서명복수문서테스트1");
     // 서명 원문 - 원문 2,800자 까지 입력가능
     token.setToken(kakaocertService.encrypt("전자서명복수테스트데이터1"));
-    multiESignRequest.addToken(token);
+    multiSign.addToken(token);
 
     // 개별 요청 정보 객체
     MultiSignTokens token2 = new MultiSignTokens();
@@ -54,15 +54,15 @@
     token2.setReqTitle("전자서명복수문서테스트2");
     // 서명 원문 - 원문 2,800자 까지 입력가능
     token2.setToken(kakaocertService.encrypt("전자서명복수테스트데이터2"));
-    multiESignRequest.addToken(token2);
+    multiSign.addToken(token2);
 
     // 서명 원문 유형
     // TEXT - 일반 텍스트, HASH - HASH 데이터
-    multiESignRequest.setTokenType("TEXT");
+    multiSign.setTokenType("TEXT");
 
     // AppToApp 인증요청 여부
     // true - AppToApp 인증방식, false - Talk Message 인증방식
-    multiESignRequest.setAppUseYN(false);
+    multiSign.setAppUseYN(false);
 
     // App to App 방식 이용시, 에러시 호출할 URL
     // request.setReturnURL("https://www.kakaocert.com");
@@ -71,7 +71,7 @@
 
     try {
         
-        result = kakaocertService.requestMultiSign(clientCode, multiESignRequest);
+        result = kakaocertService.requestMultiSign(clientCode, multiSign);
          
     } catch(BarocertException ke) {
         throw ke;

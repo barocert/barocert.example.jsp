@@ -20,7 +20,7 @@
     String clientCode = "023030000004";
 
     // 본인인증 요청시 반환된 접수아이디
-    String receiptID = "02304050230300000040000000000003";
+    String receiptID = "02304170230300000040000000000020";
     
     IdentityStatus result = null;
 
