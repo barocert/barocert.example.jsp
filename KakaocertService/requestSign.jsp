@@ -25,9 +25,9 @@
 
     // 수신자 정보
     // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
-    sign.setReceiverHP(kakaocertService.encrypt("01054437896"));
-    sign.setReceiverName(kakaocertService.encrypt("최상혁"));
-    sign.setReceiverBirthday(kakaocertService.encrypt("19880301"));
+    sign.setReceiverHP(kakaocertService.encrypt("01012341234"));
+    sign.setReceiverName(kakaocertService.encrypt("홍길동"));
+    sign.setReceiverBirthday(kakaocertService.encrypt("19700101"));
     // request.setCi(kakaocertService.encrypt(""));
 
     // 인증요청 메시지 제목 - 최대 40자
