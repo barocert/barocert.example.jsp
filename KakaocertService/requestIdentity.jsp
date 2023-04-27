@@ -28,7 +28,7 @@
     identity.setReceiverHP(kakaocertService.encrypt("01012341234"));
     identity.setReceiverName(kakaocertService.encrypt("홍길동"));
     identity.setReceiverBirthday(kakaocertService.encrypt("19700101"));
-    // request.setCi(kakaocertService.encrypt(""));
+    // identity.setCi(kakaocertService.encrypt(""));
 
     // 인증요청 메시지 제목 - 최대 40자
     identity.setReqTitle("인증요청 메시지 제목란");

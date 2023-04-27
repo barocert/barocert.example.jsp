@@ -53,7 +53,7 @@
     cms.setAppUseYN(false);
 
     // App to App 방식 이용시, 에러시 호출할 URL
-    // request.setReturnURL("https://www.kakaocert.com");
+    // cms.setReturnURL("https://www.kakaocert.com");
     
    CMSReceipt result = null;
 
