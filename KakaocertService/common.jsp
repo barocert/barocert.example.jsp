@@ -6,7 +6,7 @@
 * RESTful web service request and parse json result. It uses Linkhub class module
 * to accomplish authentication APIs.
 
-* Update date : 2023-04-05
+* Update date : 2023-06-09
 ===================================================================================
 --%>
 
