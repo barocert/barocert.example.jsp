@@ -39,6 +39,36 @@
             <li><a href="KakaocertService/verifyCMS.jsp">VerifyCMS</a> - 출금동의 검증</li>
         </ul>
     </fieldset>
+
+    <br/>
+    <fieldset class="fieldset1">
+        <legend>Passcert 본인인증 API</legend>
+        <ul>
+            <li><a href="PasscertService/requestIdentity.jsp">RequestIdentity</a> - 본인인증 요청</li>
+            <li><a href="PasscertService/getIdentityStatus.jsp">getIdentityStatus</a> - 본인인증 상태확인</li>
+            <li><a href="PasscertService/verifyIdentity.jsp">VerifyIdentity</a> - 본인인증 검증</li>
+        </ul>
+    </fieldset>
+    
+    <fieldset class="fieldset1">
+        <legend>Passcert 전자서명 API</legend>
+        <ul>
+            <li><a href="PasscertService/requestSign.jsp">RequestSign</a> - 전자서명 요청</li>
+            <li><a href="PasscertService/getSignStatus.jsp">GetSignStatus</a> - 전자서명 상태확인</li>
+            <li><a href="PasscertService/verifySign.jsp">VerifySign</a> - 전자서명 검증</li>
+        </ul>
+    </fieldset>
+
+    <fieldset class="fieldset1">
+        <legend>Passcert 출금동의 API</legend>
+        <ul>
+            <li><a href="PasscertService/requestCMS.jsp">RequestCMS</a> - 출금동의 요청</li>
+            <li><a href="PasscertService/getCMSStatus.jsp">GetCMSStatus</a> - 출금동의 상태확인</li>
+            <li><a href="PasscertService/verifyCMS.jsp">VerifyCMS</a> - 출금동의 검증</li>
+        </ul>
+    </fieldset>
 </div>
+
+
 </body>
 </html>
