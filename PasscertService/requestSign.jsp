@@ -41,7 +41,8 @@
     // 서명 원문 - 원문 2,800자 까지 입력가능
     sign.setToken(passcertService.encrypt("패스써트 전자서명 테스트 데이터"));
     // 서명 원문 유형
-    // TEXT - 일반 텍스트, HASH - HASH 데이터
+    // 'TEXT' - 일반 텍스트, 'HASH' - HASH 데이터, 'URL' - URL 데이터
+    // 원본데이터(originalTypeCode, originalURL, originalFormatCode) 입력시 'TEXT'사용 불가
     sign.setTokenType(passcertService.encrypt("URL"));
 
     // 사용자 동의 필요 여부
