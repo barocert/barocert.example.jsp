@@ -60,10 +60,10 @@
     try {
         
         result = passcertService.requestIdentity(clientCode, identity);
-         
+    
     } catch(BarocertException pe) {
         throw pe;
-  }
+    }
 %>
     <body>
         <div id="content">

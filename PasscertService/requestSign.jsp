@@ -25,7 +25,7 @@
 
     // 수신자 휴대폰번호 - 11자 (하이픈 제외)
     sign.setReceiverHP(passcertService.encrypt("01012341234"));
-    // 수신자 성명 - 80자
+    // 수신자 성명 - 최대 80자
     sign.setReceiverName(passcertService.encrypt("홍길동"));
     // 수신자 생년월일 - 8자 (yyyyMMdd)
     sign.setReceiverBirthday(passcertService.encrypt("19700101"));
@@ -74,10 +74,10 @@
     try {
         
         result = passcertService.requestSign(clientCode, sign);
-         
+
     } catch(BarocertException pe) {
         throw pe;
-  }
+    }
 %>
     <body>
         <div id="content">
@@ -88,6 +88,7 @@
                 <ul>
                     <li>접수아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
                     <li>앱스킴 (scheme) : <%=result.getScheme()%></li>
+                    <li>앱다운로드 URL (MarketUrl) : <%=result.getMarketUrl()%></li>
                 </ul>
             </fieldset>
         </div>

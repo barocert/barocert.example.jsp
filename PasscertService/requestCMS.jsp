@@ -66,15 +66,15 @@
     
     cms.setUseTssYN(false);
 
-   CMSReceipt result = null;
+    CMSReceipt result = null;
 
     try {
         
         result = passcertService.requestCMS(clientCode, cms);
-         
+    
     } catch(BarocertException ke) {
         throw ke;
-  }
+    }
 %>
     <body>
         <div id="content">
@@ -85,6 +85,7 @@
                 <ul>
                     <li>접수아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
                     <li>앱스킴 (scheme) : <%=result.getScheme()%></li>
+                    <li>앱다운로드 URL (MarketUrl) : <%=result.getMarketUrl()%></li>
                 </ul>
             </fieldset>
         </div>
