@@ -23,11 +23,11 @@
     // 본인인증 요청시 반환된 접수아이디
     String receiptID = "02304170230300000040000000000020";
     
-    // 검증 요청 정보 객체
+    // 본인인증 검증 요청 정보 객체
     IdentityVerify request = new IdentityVerify();
-    // 서명검증 요청 휴대폰번호 - 11자 (하이픈 제외)
+    // 본인인증 검증 요청 휴대폰번호 - 11자 (하이픈 제외)
     request.setReceiverHP(passcertService.encrypt("01012341234")); 
-    // 서명검증 요청 성명
+    // 본인인증 검증 요청 성명 - 최대 80자
     request.setReceiverName(passcertService.encrypt("홍길동")); 
 
     IdentityResult result = null;

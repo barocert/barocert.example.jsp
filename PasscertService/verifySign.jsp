@@ -23,11 +23,11 @@
     // 전자서명 요청시 반환된 접수아이디
     String receiptID = "02304050230300000040000000000007";
     
-    // 검증 요청 정보 객체
+    // 전자서명 검증 요청 정보 객체
     SignVerify request = new SignVerify();
-    // 검증 요청자 휴대폰번호 - 11자 (하이픈 제외)
+    // 전자서명 검증 요청자 휴대폰번호 - 11자 (하이픈 제외)
     request.setReceiverHP(passcertService.encrypt("01012341234")); 
-    // 검증 요청자 성명
+    // 전자서명 검증 요청자 성명 - 최대 80자
     request.setReceiverName(passcertService.encrypt("홍길동"));
 
     SignResult result = null;
