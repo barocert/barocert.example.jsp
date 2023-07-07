@@ -9,32 +9,32 @@
 <%@ include file="common.jsp" %>
 
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.passcert.cms.CMSResult"%>
-<%@page import="com.barocert.passcert.cms.CMSVerify"%>
+<%@page import="com.barocert.passcert.login.LoginResult"%>
+<%@page import="com.barocert.passcert.login.LoginVerify"%>
 
 <%
     /*
-     * 패스 자동이체 출금동의 요청시 반환된 접수아이디를 통해 서명을 검증합니다.
+     * 간편로그인 요청시 반환된 접수아이디를 통해 검증합니다.
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
 
-    // 패스 자동이체 요청시 반환된 접수아이디
-    String receiptID = "02304050230300000040000000000008";
+    // 간편로그인 요청시 반환된 접수아이디
+    String receiptID = "02307060230600000440000000000010";
     
-    // 출금동의 검증 요청 정보
-    CMSVerify cmsVerify = new CMSVerify(); 
-    // 출금동의 검증 요청자 휴대폰번호 - 11자 (하이픈 제외)
-    cmsVerify.setReceiverHP(passcertService.encrypt("01012341234")); 
-    // 출금동의 검증 요청자 성명 - 최대 80자
-    cmsVerify.setReceiverName(passcertService.encrypt("홍길동"));
+    // 검증 요청 정보
+    LoginVerify loginVerify = new LoginVerify();
+    // 간편로그인 검증 요청 휴대폰번호 - 11자 (하이픈 제외)
+    loginVerify.setReceiverHP(passcertService.encrypt("01012341234")); 
+    // 간편로그인 검증 요청 성명 - 최대 80자
+    loginVerify.setReceiverName(passcertService.encrypt("홍길동")); 
 
-    CMSResult result = null;
+    LoginResult result = null;
 
     try {
         
-        result = passcertService.verifyCMS(clientCode, receiptID, cmsVerify);
+        result = passcertService.verifyLogin(clientCode, receiptID, loginVerify);
         
     } catch(BarocertException pe) {
         throw pe;
@@ -45,10 +45,13 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>패스 본인인증 검증</legend>
+                <legend>패스 간편로그인 검증</legend>
                 <ul>
                     <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
                     <li>상태 (State) : <%=result.getState()%></li>
+                    <li>수신자 성명 (ReceiverName) : <%=result.getReceiverName()%></li>
+                    <li>수신자 생년월일 (ReceiverBirthday) : <%=result.getReceiverBirthday()%></li>
+                    <li>수신자 성별 (ReceiverGender) : <%=result.getReceiverGender()%></li>
                     <li>통신사유형 (TelcoType) : <%=result.getTelcoType()%></li>
                     <li>전자서명 데이터 전문 (SignedData) : <%=result.getSignedData()%></li>
                     <li>연계정보 (CI) : <%=result.getCi()%></li>

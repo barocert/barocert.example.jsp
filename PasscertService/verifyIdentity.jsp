@@ -14,38 +14,38 @@
 
 <%
     /*
-     * 본인인증 요청시 반환된 접수아이디를 통해 본인인증 서명을 검증합니다.
+     * 패스 본인인증 요청시 반환된 접수아이디를 통해 본인인증 서명을 검증합니다.
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
 
-    // 본인인증 요청시 반환된 접수아이디
+    // 패스 본인인증 요청시 반환된 접수아이디
     String receiptID = "02304170230300000040000000000020";
     
-    // 본인인증 검증 요청 정보 객체
-    IdentityVerify request = new IdentityVerify();
+    // 본인인증 검증 요청 정보
+    IdentityVerify identityVerify = new IdentityVerify();
     // 본인인증 검증 요청 휴대폰번호 - 11자 (하이픈 제외)
-    request.setReceiverHP(passcertService.encrypt("01012341234")); 
+    identityVerify.setReceiverHP(passcertService.encrypt("01012341234")); 
     // 본인인증 검증 요청 성명 - 최대 80자
-    request.setReceiverName(passcertService.encrypt("홍길동")); 
+    identityVerify.setReceiverName(passcertService.encrypt("홍길동")); 
 
     IdentityResult result = null;
 
     try {
         
-        result = passcertService.verifyIdentity(clientCode, receiptID, request);
-         
+        result = passcertService.verifyIdentity(clientCode, receiptID, identityVerify);
+        
     } catch(BarocertException pe) {
         throw pe;
-  }
+    }
 %>
     <body>
         <div id="content">
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>본인인증 검증</legend>
+                <legend>패스 본인인증 검증</legend>
                 <ul>
                     <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
                     <li>상태 (State) : <%=result.getState()%></li>

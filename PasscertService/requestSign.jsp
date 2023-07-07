@@ -18,7 +18,8 @@
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
-    String clientCode = "023030000004";
+    // String clientCode = "023030000004";
+    String clientCode = "023060000044";
 
     // 전자서명 요청 정보 객체
     Sign sign = new Sign();
@@ -30,13 +31,13 @@
     // 수신자 생년월일 - 8자 (yyyyMMdd)
     sign.setReceiverBirthday(passcertService.encrypt("19700101"));
 
-    // 인증요청 메시지 제목 - 최대 40자
+    // 요청 메시지 제목 - 최대 40자
     sign.setReqTitle("패스써트 전자서명 인증요청 타이틀");
-    // 인증요청 메시지
+    // 요청 메시지
     sign.setReqMessage(passcertService.encrypt("패스써트 전자서명 인증요청 내용"));
     // 고객센터 연락처
     sign.setCallCenterNum("1600-9854");
-    // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
+    // 요청 만료시간 - 최대 1,000(초)까지 입력 가능
     sign.setExpireIn(1000);
     // 서명 원문 - 원문 2,800자 까지 입력가능
     sign.setToken(passcertService.encrypt("패스써트 전자서명 테스트 데이터"));

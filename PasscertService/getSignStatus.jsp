@@ -13,13 +13,14 @@
 
 <%
     /*
-     * 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
+     * 패스 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
-    String clientCode = "023030000004";
+    // String clientCode = "023030000004";
+    String clientCode = "023060000044";
 
-    // 전자서명 요청시 반환된 접수아이디
+    // 패스 전자서명 요청시 반환된 접수아이디
     String receiptID = "02304050230300000040000000000007";
     
    SignStatus result = null;
@@ -45,8 +46,8 @@
                     <li>요청 만료시간 (ExpireIn) : <%=result.getExpireIn()%></li>
                     <li>이용기관 명 (CallCenterName) : <%=result.getCallCenterName()%></li>
                     <li>이용기관 연락처 (CallCenterNum) : <%=result.getCallCenterNum()%></li>
-                    <li>인증요청 메시지 제목 (ReqTitle) : <%=result.getReqTitle()%></li>
-                    <li>인증요청 메시지 (ReqMessage) : <%=result.getReqMessage()%></li>
+                    <li>요청 메시지 제목 (ReqTitle) : <%=result.getReqTitle()%></li>
+                    <li>요청 메시지 (ReqMessage) : <%=result.getReqMessage()%></li>
                     <li>서명요청일시 (RequestDT) : <%=result.getRequestDT()%></li>
                     <li>서명완료일시 (CompleteDT) : <%=result.getCompleteDT()%></li>
                     <li>서명만료일시 (ExpireDT) : <%=result.getExpireDT()%></li>

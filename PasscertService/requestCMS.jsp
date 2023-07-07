@@ -18,9 +18,10 @@
      */ 
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
-    String clientCode = "023030000004";
+    // String clientCode = "023030000004";
+    String clientCode = "023060000044";
 
-    // 출금동의 요청 정보 객체
+    // 패스 출금동의 요청 정보 객체
     CMS cms = new CMS();
     
     // 수신자 휴대폰번호 - 11자 (하이픈 제외)
@@ -30,14 +31,14 @@
     // 수신자 생년월일 - 8자 (yyyyMMdd)
     cms.setReceiverBirthday(passcertService.encrypt("19700101"));
 
-    // 인증요청 메시지 제목 - 최대 40자
+    // 요청 메시지 제목 - 최대 40자
     cms.setReqTitle("패스써트 출금동의 인증요청 타이틀");
-    // 인증요청 메시지 - 최대 500자
+    // 요청 메시지 - 최대 500자
     cms.setReqMessage(passcertService.encrypt("패스써트 출금동의 인증요청 내용"));
 
     // 고객센터 연락처 - 최대 12자
     cms.setCallCenterNum("1600-9854");
-    // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
+    // 요청 만료시간 - 최대 1,000(초)까지 입력 가능
     cms.setExpireIn(1000);
     // 사용자 동의 필요 여부
     cms.setUserAgreementYN(true);

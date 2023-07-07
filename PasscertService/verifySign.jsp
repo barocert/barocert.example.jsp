@@ -14,31 +14,31 @@
 
 <%
     /*
-     * 전자서명 요청시 반환된 접수아이디를 통해 서명을 검증합니다.
+     * 패스 전자서명 요청시 반환된 접수아이디를 통해 서명을 검증합니다.
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
 
-    // 전자서명 요청시 반환된 접수아이디
+    // 패스 전자서명 요청시 반환된 접수아이디
     String receiptID = "02304050230300000040000000000007";
     
-    // 전자서명 검증 요청 정보 객체
-    SignVerify request = new SignVerify();
+    // 전자서명 검증 요청 정보
+    SignVerify signVerify = new SignVerify();
     // 전자서명 검증 요청자 휴대폰번호 - 11자 (하이픈 제외)
-    request.setReceiverHP(passcertService.encrypt("01012341234")); 
+    signVerify.setReceiverHP(passcertService.encrypt("01012341234")); 
     // 전자서명 검증 요청자 성명 - 최대 80자
-    request.setReceiverName(passcertService.encrypt("홍길동"));
+    signVerify.setReceiverName(passcertService.encrypt("홍길동"));
 
     SignResult result = null;
 
     try {
         
-        result = passcertService.verifySign(clientCode, receiptID, request);
-         
+        result = passcertService.verifySign(clientCode, receiptID, signVerify);
+        
     } catch(BarocertException pe) {
         throw pe;
-  }
+    }
 %>
     <body>
         <div id="content">

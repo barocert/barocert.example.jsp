@@ -67,6 +67,15 @@
             <li><a href="PasscertService/verifyCMS.jsp">VerifyCMS</a> - 출금동의 검증</li>
         </ul>
     </fieldset>
+
+    <fieldset class="fieldset1">
+        <legend>Passcert 간편로그인 API</legend>
+        <ul>
+            <li><a href="PasscertService/requestLogin.jsp">RequestLogin</a> - 간편로그인 요청</li>
+            <li><a href="PasscertService/getLoginStatus.jsp">GetLoginStatus</a> - 간편로그인 상태확인</li>
+            <li><a href="PasscertService/verifyLogin.jsp">VerifyLogin</a> - 간편로그인 검증</li>
+        </ul>
+    </fieldset>
 </div>
 
 
