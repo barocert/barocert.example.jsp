@@ -15,6 +15,7 @@
 <%
     /*
      * 패스 본인인증 요청시 반환된 접수아이디를 통해 본인인증 서명을 검증합니다.
+     * https://developers.barocert.com/reference/pass/java/identity/api#VerifyIdentity
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)

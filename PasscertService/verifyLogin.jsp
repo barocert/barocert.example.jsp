@@ -15,6 +15,7 @@
 <%
     /*
      * 간편로그인 요청시 반환된 접수아이디를 통해 검증합니다.
+     * https://developers.barocert.com/reference/pass/java/login/api#VerifyLogin
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
