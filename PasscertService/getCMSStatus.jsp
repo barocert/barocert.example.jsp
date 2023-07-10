@@ -14,12 +14,10 @@
 <%
     /*
      * 패스 출금동의 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
-     * https://developers.barocert.com/reference/pass/java/cms/api#GetCMSStatus
      */
 
-    // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
-    // String clientCode = "023030000004";
-    String clientCode = "023060000044";
+    // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
+    String clientCode = "023030000004";
 
     // 패스 출금동의 요청시 반환된 접수아이디
     String receiptID = "02304050230300000040000000000008";
@@ -29,10 +27,10 @@
     try {
         
         result = passcertService.getCMSStatus(clientCode, receiptID);
-         
+        
     } catch(BarocertException ke) {
         throw ke;
-  }
+    }
 %>
     <body>
         <div id="content">

@@ -15,12 +15,10 @@
 <%
     /*
      * 패스 사용자에게 출금동의 전자서명을 요청합니다.
-     * https://developers.barocert.com/reference/pass/java/cms/api#RequestCMS
      */ 
 
-    // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
-    // String clientCode = "023030000004";
-    String clientCode = "023060000044";
+    // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
+    String clientCode = "023030000004";
 
     // 패스 출금동의 요청 정보 객체
     CMS cms = new CMS();

@@ -15,10 +15,9 @@
 <%
     /*
      * 패스 사용자에게 간편로그인 전자서명을 요청합니다.
-     * https://developers.barocert.com/reference/pass/java/login/api#RequestLogin
      */
 
-    // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
+    // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
 
     // 간편로그인 요청 정보 객체
