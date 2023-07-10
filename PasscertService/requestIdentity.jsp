@@ -54,8 +54,6 @@
     // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
     // identity.setDeviceOSType("IOS");
     
-    identity.setUseTssYN(false);
-
     IdentityReceipt result = null;
 
     try {

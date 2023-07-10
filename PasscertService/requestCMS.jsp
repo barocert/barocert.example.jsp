@@ -65,8 +65,6 @@
     // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
     // cms.setDeviceOSType("IOS");
     
-    cms.setUseTssYN(false);
-
     CMSReceipt result = null;
 
     try {

@@ -53,8 +53,6 @@
     // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
     // login.setDeviceOSType("IOS");
     
-    login.setUseTssYN(false);
-
     LoginReceipt result = null;
 
     try {

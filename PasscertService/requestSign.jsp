@@ -68,8 +68,6 @@
     // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
     // sign.setDeviceOSType("IOS");
     
-    sign.setUseTssYN(false);
-
     SignReceipt result = null;
 
     try {
