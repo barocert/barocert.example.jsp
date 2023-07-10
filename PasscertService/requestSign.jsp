@@ -15,6 +15,7 @@
 <%
     /*
      * 패스 사용자에게 전자서명을 요청합니다.
+     * https://developers.barocert.com/reference/pass/java/sign/api#RequestSign
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
