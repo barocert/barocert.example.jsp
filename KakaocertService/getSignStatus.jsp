@@ -49,6 +49,7 @@
                     <li>인증요청 메시지 제목 (ReqTitle) : <%=result.getReqTitle()%></li>
                     <li>인증분류 (AuthCategory) : <%=result.getAuthCategory()%></li>
                     <li>복귀 URL (ReturnURL) : <%=result.getReturnURL()%></li>
+                    <li>원문 구분 (TokenType) : <%=result.getTokenType()%></li>>
                     <li>서명요청일시 (RequestDT) : <%=result.getRequestDT()%></li>
                     <li>서명조회일시 (ViewDT) : <%=result.getViewDT()%></li>
                     <li>서명완료일시 (CompleteDT) : <%=result.getCompleteDT()%></li>
