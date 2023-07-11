@@ -17,21 +17,21 @@
      * https://developers.barocert.com/reference/kakao/java/sign/api-single#GetSignStatus
      */
 
-    // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
+    // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
 
     // 전자서명 요청시 반환된 접수아이디
     String receiptID = "02304050230300000040000000000007";
     
-   SignStatus result = null;
+    SignStatus result = null;
 
     try {
         
         result = kakaocertService.getSignStatus(clientCode, receiptID);
-         
+        
     } catch(BarocertException ke) {
         throw ke;
-  }
+    }
 %>
     <body>
         <div id="content">
@@ -49,7 +49,6 @@
                     <li>인증요청 메시지 제목 (ReqTitle) : <%=result.getReqTitle()%></li>
                     <li>인증분류 (AuthCategory) : <%=result.getAuthCategory()%></li>
                     <li>복귀 URL (ReturnURL) : <%=result.getReturnURL()%></li>
-                    <li>원문 구분 (TokenType) : <%=result.getTokenType()%></li>
                     <li>서명요청일시 (RequestDT) : <%=result.getRequestDT()%></li>
                     <li>서명조회일시 (ViewDT) : <%=result.getViewDT()%></li>
                     <li>서명완료일시 (CompleteDT) : <%=result.getCompleteDT()%></li>

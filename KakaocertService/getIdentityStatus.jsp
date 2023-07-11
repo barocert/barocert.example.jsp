@@ -17,7 +17,7 @@
      * https://developers.barocert.com/reference/kakao/java/identity/api#GetIdentityStatus
      */
 
-    // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
+    // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
 
     // 본인인증 요청시 반환된 접수아이디
@@ -28,10 +28,10 @@
     try {
         
         result = kakaocertService.getIdentityStatus(clientCode, receiptID);
-         
+        
     } catch(BarocertException ke) {
         throw ke;
-  }
+    }
 %>
     <body>
         <div id="content">

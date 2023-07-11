@@ -18,7 +18,7 @@
      * https://developers.barocert.com/reference/kakao/java/sign/api-single#RequestSign
      */
 
-    // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
+    // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
 
     // 전자서명 요청 정보 객체
@@ -53,10 +53,10 @@
     try {
         
         result = kakaocertService.requestSign(clientCode, sign);
-         
+        
     } catch(BarocertException ke) {
         throw ke;
-  }
+    }
 %>
     <body>
         <div id="content">

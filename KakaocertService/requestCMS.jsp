@@ -18,7 +18,7 @@
      * https://developers.barocert.com/reference/kakao/java/cms/api#RequestCMS
      */
 
-    // 이용기관코드, 파트너가 등록한 이용기관의 코드, (파트너 사이트에서 확인가능)
+    // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
     String clientCode = "023030000004";
 
     // 출금동의 요청 정보 객체
@@ -58,15 +58,15 @@
     // App to App 방식 이용시, 에러시 호출할 URL
     // cms.setReturnURL("https://www.kakaocert.com");
     
-   CMSReceipt result = null;
+    CMSReceipt result = null;
 
     try {
         
         result = kakaocertService.requestCMS(clientCode, cms);
-         
+        
     } catch(BarocertException ke) {
         throw ke;
-  }
+    }
 %>
     <body>
         <div id="content">
