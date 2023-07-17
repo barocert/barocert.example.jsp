@@ -53,6 +53,7 @@
                     <li>서명거절일시 (RejectDT) : <%=result.getRejectDT()%></li>
                     <li>원문유형 (TokenType) : <%=result.getTokenType()%></li>
                     <li>사용자동의필요여부 (UserAgreementYN) : <%=result.getUserAgreementYN()%></li>
+                    <li>사용자정보포함여부 (ReceiverInfoYN) : <%=result.getReceiverInfoYN()%></li>
                     <li>통신사 유형 (TelcoType) : <%=result.getTelcoType()%></li>
                     <li>모바일장비 유형 (DeviceOSType) : <%=result.getDeviceOSType()%></li>
                     <li>앱스킴 (Scheme) : <%=result.getScheme()%></li>

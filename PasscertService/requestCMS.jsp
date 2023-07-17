@@ -39,9 +39,7 @@
     cms.setCallCenterNum("1600-9854");
     // 요청 만료시간 - 최대 1,000(초)까지 입력 가능
     cms.setExpireIn(1000);
-    // 사용자 동의 필요 여부
-    cms.setUserAgreementYN(true);
-
+    
     // 출금은행명 - 최대 100자
     cms.setBankName(passcertService.encrypt("국민은행"));
     // 출금계좌번호 - 최대 31자
@@ -53,6 +51,11 @@
     cms.setBankServiceType(passcertService.encrypt("CMS"));
     // 출금액
     cms.setBankWithdraw(passcertService.encrypt("1,000,000원"));
+
+    // 사용자 동의 필요 여부
+    cms.setUserAgreementYN(true);
+    // 사용자 정보 포함 여부
+    cms.setReceiverInfoYN(true);
 
     // AppToApp 인증요청 여부
     // true - AppToApp 인증방식, false - Talk Message 인증방식

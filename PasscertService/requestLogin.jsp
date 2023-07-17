@@ -43,6 +43,9 @@
 
     // 사용자 동의 필요 여부
     login.setUserAgreementYN(true);
+    // 사용자 정보 포함 여부
+    cms.setReceiverInfoYN(true);
+    
     // AppToApp 인증요청 여부
     // true - AppToApp 인증방식, false - Talk Message 인증방식
     login.setAppUseYN(false);

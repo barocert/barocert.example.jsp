@@ -35,6 +35,11 @@
     try {
         
         result = passcertService.verifySign(clientCode, receiptID, signVerify);
+        result.setReceiverName(passcertService.decrypt(result.getReceiverName(), DEC_ALGORITHM));
+        result.setReceiverHP(passcertService.decrypt(result.getReceiverHP(), DEC_ALGORITHM));
+        result.setReceiverBirthday(passcertService.decrypt(result.getReceiverBirthday(), DEC_ALGORITHM));
+        result.setReceiverGender(passcertService.decrypt(result.getReceiverGender(), DEC_ALGORITHM));
+        result.setReceiverTelcoType(passcertService.decrypt(result.getReceiverTelcoType(), DEC_ALGORITHM));
         
     } catch(BarocertException pe) {
         throw pe;
@@ -51,9 +56,9 @@
                     <li>상태 (State) : <%=result.getState()%></li>
                     <li>수신자 성명 (ReceiverName) : <%=result.getReceiverName()%></li>
                     <li>수신자 생년월일 (ReceiverBirthday) : <%=result.getReceiverBirthday()%></li>
-                    <li>수신자 성별 (ReceiverGender) : <%=result.getReceiverGender()%></li>
                     <li>수신자 휴대폰번호 (ReceiverHP) : <%=result.getReceiverHP()%></li>
-                    <li>통신사유형 (TelcoType) : <%=result.getTelcoType()%></li>
+                    <li>수신자 성별 (ReceiverGender) : <%=result.getReceiverGender()%></li>
+                    <li>통신사 유형 (ReceiverTelcoType) : <%=result.getReceiverTelcoType()%></li>
                     <li>전자서명 데이터 전문 (SignedData) : <%=result.getSignedData()%></li>
                     <li>연계정보 (CI) : <%=result.getCi()%></li>
                 </ul>
