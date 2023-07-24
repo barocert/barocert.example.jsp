@@ -40,6 +40,13 @@
         </ul>
     </fieldset>
 
+    <fieldset class="fieldset1">
+        <legend>Kakaocert 간편로그인 API</legend>
+        <ul>
+            <li><a href="KakaocertService/verifyLogin.jsp">VerifyLogin</a> - 간편로그인 검증</li>
+        </ul>
+    </fieldset>
+
     <br/>
     <fieldset class="fieldset1">
         <legend>Passcert 본인인증 API</legend>
