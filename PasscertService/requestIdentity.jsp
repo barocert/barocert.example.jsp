@@ -75,7 +75,7 @@
                 <ul>
                     <li>접수아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
                     <li>앱스킴 (Scheme) : <%=result.getScheme()%></li>
-                    <li>앱다운로드 URL (MarketUrl) : <%=result.getMarketUrl()%></li>
+                    <li>앱다운로드URL (MarketUrl) : <%=result.getMarketUrl()%></li>
                 </ul>
             </fieldset>
         </div>

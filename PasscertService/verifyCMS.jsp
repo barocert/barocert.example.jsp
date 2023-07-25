@@ -35,11 +35,11 @@
     try {
         
         result = passcertService.verifyCMS(clientCode, receiptID, cmsVerify);
-        result.setReceiverName(passcertService.decrypt(result.getReceiverName(), DEC_ALGORITHM));
-        result.setReceiverHP(passcertService.decrypt(result.getReceiverHP(), DEC_ALGORITHM));
-        result.setReceiverBirthday(passcertService.decrypt(result.getReceiverBirthday(), DEC_ALGORITHM));
-        result.setReceiverGender(passcertService.decrypt(result.getReceiverGender(), DEC_ALGORITHM));
-        result.setReceiverTelcoType(passcertService.decrypt(result.getReceiverTelcoType(), DEC_ALGORITHM));
+        result.setReceiverName(result.getReceiverName());
+        result.setReceiverHP(result.getReceiverHP());
+        result.setReceiverBirthday(result.getReceiverBirthday());
+        result.setReceiverGender(result.getReceiverGender());
+        result.setReceiverTelcoType(result.getReceiverTelcoType());
         
     } catch(BarocertException pe) {
         throw pe;

@@ -41,7 +41,7 @@
             <fieldset class="fieldset1">
                 <legend>간편로그인 검증</legend>
                 <ul>
-                    <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
+                    <li>트랜잭션 아이디 (TxID) : <%=result.getTxID()%></li>
                     <li>상태 (State) : <%=result.getState()%></li>
                     <li>전자서명 데이터 전문 (SignedData) : <%=result.getSignedData()%></li>
                     <li>연계정보 (Ci) : <%=result.getCi()%></li>
