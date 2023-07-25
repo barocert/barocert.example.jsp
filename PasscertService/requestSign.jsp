@@ -51,10 +51,12 @@
     sign.setReceiverInfoYN(true);
 
     // 원본유형코드
+    // 'AG' - 동의서, 'AP' - 신청서, 'CT' - 계약서, 'GD' - 안내서, 'NT' - 통지서, 'TR' - 약관
     sign.setOriginalTypeCode("TR");
     // 원본조회URL
     sign.setOriginalURL("https://www.passcert.co.kr");
     // 원본형태코드
+    // 'TEXT', 'HTML', 'DOWNLOAD_IMAGE', 'DOWNLOAD_DOCUMENT'
     sign.setOriginalFormatCode("HTML");
 
     // AppToApp 인증요청 여부
