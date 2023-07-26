@@ -39,7 +39,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>본인인증 검증</legend>
+                <legend>카카오 본인인증 검증</legend>
                 <ul>
                     <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
                     <li>상태 (State) : <%=result.getState()%></li>

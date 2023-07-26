@@ -39,7 +39,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>간편로그인 검증</legend>
+                <legend>카카오 간편로그인 검증</legend>
                 <ul>
                     <li>트랜잭션 아이디 (TxID) : <%=result.getTxID()%></li>
                     <li>상태 (State) : <%=result.getState()%></li>

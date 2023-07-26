@@ -38,7 +38,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>전자서명 요청(단건)</legend>
+                <legend>카카오 전자서명 상태확인(단건)</legend>
                 <ul>
                     <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
                     <li>이용기관 코드 (ClientCode) : <%=result.getClientCode()%></li>
