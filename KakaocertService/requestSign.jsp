@@ -14,7 +14,7 @@
 
 <%
     /*
-     * 카카오톡 사용자에게 전자서명을 요청합니다.(단건)
+     * 카카오톡 이용자에게 단건(1건) 문서의 전자서명을 요청합니다.
      * https://developers.barocert.com/reference/kakao/java/sign/api-single#RequestSign
      */
 

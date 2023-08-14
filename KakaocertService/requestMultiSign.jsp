@@ -18,7 +18,7 @@
 
 <%
     /*
-     * 카카오톡 사용자에게 전자서명을 요청합니다.(복수)
+     * 카카오톡 이용자에게 복수(최대 20건) 문서의 전자서명을 요청합니다.
      * https://developers.barocert.com/reference/kakao/java/sign/api-multi#RequestMultiSign
      */
 

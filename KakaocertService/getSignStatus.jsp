@@ -13,7 +13,7 @@
 
 <%
     /*
-     * 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다. (단건)
+     * 전자서명(단건) 요청 후 반환받은 접수아이디로 인증 진행 상태를 확인합니다.
      * https://developers.barocert.com/reference/kakao/java/sign/api-single#GetSignStatus
      */
 

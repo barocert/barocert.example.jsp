@@ -14,7 +14,11 @@
 
 <%
     /*
-     * 본인인증 요청시 반환된 접수아이디를 통해 본인인증 서명을 검증합니다.
+     * 완료된 전자서명을 검증하고 전자서명값(signedData)을 반환 받습니다.
+     * 반환받은 전자서명값(signedData)과 [1. RequestIdentity] 함수 호출에 입력한 Token의 동일 여부를 확인하여 이용자의 본인인증 검증을 완료합니다.
+     * 검증 함수는 본인인증 요청 함수를 호출한 당일 23시 59분 59초까지만 호출 가능합니다.
+     * 본인인증 요청 함수를 호출한 당일 23시 59분 59초 이후 검증 함수를 호출할 경우 오류가 반환됩니다.
+     * https://developers.barocert.com/reference/pass/java/identity/api#VerifyIdentity
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
@@ -35,10 +39,6 @@
     try {
         
         result = passcertService.verifyIdentity(clientCode, receiptID, identityVerify);
-        result.setReceiverName(result.getReceiverName());
-        result.setReceiverBirthday(result.getReceiverBirthday());
-        result.setReceiverGender(result.getReceiverGender());
-        result.setReceiverTelcoType(result.getReceiverTelcoType());
         
     } catch(BarocertException pe) {
         throw pe;
@@ -54,7 +54,8 @@
                     <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
                     <li>상태 (State) : <%=result.getState()%></li>
                     <li>수신자 성명 (ReceiverName) : <%=result.getReceiverName()%></li>
-                    <li>수신자 생년월일 (ReceiverBirthday) : <%=result.getReceiverBirthday()%></li>
+                    <li>수신자 출생년도 (ReceiverYear) : <%=result.getReceiverYear()%></li>
+                    <li>수신자 출생월일 (ReceiverDay) : <%=result.getReceiverDay()%></li>
                     <li>수신자 성별 (ReceiverGender) : <%=result.getReceiverGender()%></li>
                     <li>통신사 유형 (ReceiverTelcoType) : <%=result.getReceiverTelcoType()%></li>
                     <li>전자서명 데이터 전문 (SignedData) : <%=result.getSignedData()%></li>
