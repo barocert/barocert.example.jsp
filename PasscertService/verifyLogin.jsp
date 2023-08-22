@@ -56,6 +56,7 @@
                     <li>수신자 출생년도 (ReceiverYear) : <%=result.getReceiverYear()%></li>
                     <li>수신자 출생월일 (ReceiverDay) : <%=result.getReceiverDay()%></li>
                     <li>수신자 성별 (ReceiverGender) : <%=result.getReceiverGender()%></li>
+                    <li>외국인 여부 (ReceiverForeign) : <%=result.getReceiverForeign()%></li>
                     <li>통신사 유형 (ReceiverTelcoType) : <%=result.getReceiverTelcoType()%></li>
                     <li>전자서명 데이터 전문 (SignedData) : <%=result.getSignedData()%></li>
                     <li>연계정보 (CI) : <%=result.getCi()%></li>
