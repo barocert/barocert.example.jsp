@@ -74,9 +74,9 @@
             <fieldset class="fieldset1">
                 <legend>패스 간편로그인 요청</legend>
                 <ul>
-                    <li>접수아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
-                    <li>앱스킴 (Scheme) : <%=result.getScheme()%></li>
-                    <li>앱다운로드URL (MarketUrl) : <%=result.getMarketUrl()%></li>
+                    <li>ReceiptID (접수아이디) : <%=result.getReceiptID()%></li>
+                    <li>Scheme (앱스킴) : <%=result.getScheme()%></li>
+                    <li>MarketUrl (앱다운로드URL) : <%=result.getMarketUrl()%></li>
                 </ul>
             </fieldset>
         </div>

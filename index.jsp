@@ -47,6 +47,25 @@
         </ul>
     </fieldset>
 
+    <fieldset class="fieldset1">
+        <legend>Navercert 본인인증 API</legend>
+        <ul>
+            <li><a href="NavercertService/requestIdentity.jsp">RequestIdentity</a> - 본인인증 요청</li>
+            <li><a href="NavercertService/getIdentityStatus.jsp">getIdentityStatus</a> - 본인인증 상태확인</li>
+            <li><a href="NavercertService/verifyIdentity.jsp">VerifyIdentity</a> - 본인인증 검증</li>
+        </ul>
+    </fieldset>
+    <fieldset class="fieldset1">
+        <legend>Navercert 전자서명 API</legend>
+        <ul>
+            <li><a href="NavercertService/requestSign.jsp">RequestSign</a> - 전자서명 요청(단건)</li>
+            <li><a href="NavercertService/getSignStatus.jsp">GetSignStatus</a> - 전자서명 상태확인(단건)</li>
+            <li><a href="NavercertService/verifySign.jsp">VerifySign</a> - 전자서명 검증(단건)</li>
+            <li><a href="NavercertService/requestMultiSign.jsp">RequestMultiSign</a> - 전자서명 요청(다건)</li>
+            <li><a href="NavercertService/getMultiSignStatus.jsp">GetMultiSignStatus</a> - 전자서명 상태확인(다건)</li>
+            <li><a href="NavercertService/verifyMultiSign.jsp">VerifyMultiSign</a> - 전자서명 검증(다건)</li>
+        </ul>
+    </fieldset>
     <br/>
     <fieldset class="fieldset1">
         <legend>Passcert 본인인증 API</legend>

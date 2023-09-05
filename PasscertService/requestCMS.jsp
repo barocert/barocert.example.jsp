@@ -85,9 +85,9 @@
             <fieldset class="fieldset1">
                 <legend>패스 출금동의 요청</legend>
                 <ul>
-                    <li>접수아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
-                    <li>앱스킴 (scheme) : <%=result.getScheme()%></li>
-                    <li>앱다운로드URL (MarketUrl) : <%=result.getMarketUrl()%></li>
+                    <li>ReceiptID (접수아이디) : <%=result.getReceiptID()%></li>
+                    <li>scheme (앱스킴) : <%=result.getScheme()%></li>
+                    <li>MarketUrl (앱다운로드URL) : <%=result.getMarketUrl()%></li>
                 </ul>
             </fieldset>
         </div>

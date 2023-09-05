@@ -50,17 +50,17 @@
             <fieldset class="fieldset1">
                 <legend>패스 출금동의 검증</legend>
                 <ul>
-                    <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
-                    <li>상태 (State) : <%=result.getState()%></li>
-                    <li>수신자 성명 (ReceiverName) : <%=result.getReceiverName()%></li>
-                    <li>수신자 출생년도 (ReceiverYear) : <%=result.getReceiverYear()%></li>
-                    <li>수신자 출생월일 (ReceiverDay) : <%=result.getReceiverDay()%></li>
-                    <li>수신자 휴대폰번호 (ReceiverHP) : <%=result.getReceiverHP()%></li>
-                    <li>수신자 성별 (ReceiverGender) : <%=result.getReceiverGender()%></li>
-                    <li>외국인 여부 (ReceiverForeign) : <%=result.getReceiverForeign()%></li>
-                    <li>통신사 유형 (ReceiverTelcoType) : <%=result.getReceiverTelcoType()%></li>
-                    <li>전자서명 데이터 전문 (SignedData) : <%=result.getSignedData()%></li>
-                    <li>연계정보 (CI) : <%=result.getCi()%></li>
+                    <li>ReceiptID (접수 아이디) : <%=result.getReceiptID()%></li>
+                    <li>State (상태) : <%=result.getState()%></li>
+                    <li>ReceiverName (수신자 성명) : <%=result.getReceiverName()%></li>
+                    <li>ReceiverYear (수신자 출생년도) : <%=result.getReceiverYear()%></li>
+                    <li>ReceiverDay (수신자 출생월일) : <%=result.getReceiverDay()%></li>
+                    <li>ReceiverHP (수신자 휴대폰번호) : <%=result.getReceiverHP()%></li>
+                    <li>ReceiverGender (수신자 성별) : <%=result.getReceiverGender()%></li>
+                    <li>ReceiverForeign (외국인 여부) : <%=result.getReceiverForeign()%></li>
+                    <li>ReceiverTelcoType (통신사 유형) : <%=result.getReceiverTelcoType()%></li>
+                    <li>SignedData (전자서명 데이터 전문) : <%=result.getSignedData()%></li>
+                    <li>CI (연계정보) : <%=result.getCi()%></li>
                 </ul>
             </fieldset>
         </div>

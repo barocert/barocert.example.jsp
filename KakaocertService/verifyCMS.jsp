@@ -42,10 +42,10 @@
             <fieldset class="fieldset1">
                 <legend>카카오 출금동의 검증</legend>
                 <ul>
-                    <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
-                    <li>상태 (State) : <%=result.getState()%></li>
-                    <li>전자서명 데이터 전문 (SignedData) : <%=result.getSignedData()%></li>
-                    <li>연계정보 (Ci) : <%=result.getCi()%></li>
+                    <li>ReceiptID (접수 아이디) : <%=result.getReceiptID()%></li>
+                    <li>State (상태) : <%=result.getState()%></li>
+                    <li>SignedData (전자서명 데이터 전문) : <%=result.getSignedData()%></li>
+                    <li>Ci (연계정보) : <%=result.getCi()%></li>
                 </ul>
             </fieldset>
         </div>

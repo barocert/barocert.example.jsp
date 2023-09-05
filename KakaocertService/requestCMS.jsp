@@ -75,8 +75,8 @@
             <fieldset class="fieldset1">
                 <legend>카카오 출금동의 요청</legend>
                 <ul>
-                    <li>접수아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
-                    <li>앱스킴 (scheme) : <%=result.getScheme()%></li>
+                    <li>ReceiptID (접수아이디) : <%=result.getReceiptID()%></li>
+                    <li>Scheme (앱스킴) : <%=result.getScheme()%></li>
                 </ul>
             </fieldset>
         </div>

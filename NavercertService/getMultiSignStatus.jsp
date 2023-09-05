@@ -1,4 +1,4 @@
-<%@page import="com.barocert.kakaocert.sign.MultiSignStatus"%>
+<%@page import="com.barocert.navercert.sign.MultiSignStatus"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -6,29 +6,30 @@
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/main.css" media="screen" />
         <title>Barocert Service jsp Example</title>
     </head>
+<%@page import="java.util.List" %>
 
 <%@ include file="common.jsp" %>
 
 <%@page import="com.barocert.BarocertException"%>
-<%@page import="com.barocert.kakaocert.sign.MultiSignStatus"%>
+<%@page import="com.barocert.navercert.sign.MultiSignStatus"%>
 
 <%
     /*
      * 전자서명(복수) 요청 후 반환받은 접수아이디로 인증 진행 상태를 확인합니다.
-     * https://developers.barocert.com/reference/kakao/java/sign/api-multi#GetMultiSignStatus
+     * https://developers.barocert.com/reference/naver/java/sign/api-multi#GetMultiSignStatus
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
-    String clientCode = "023030000004";
+    String clientCode = "023060000088";
 
     // 전자서명 요청시 반환된 접수아이디
-    String receiptID = "02304050230300000040000000000006";
+    String receiptID = "02309050230600000880000000000012";
     
     MultiSignStatus result = null;
 
     try {
         
-        result = kakaocertService.getMultiSignStatus(clientCode, receiptID);
+        result = navercertService.getMultiSignStatus(clientCode, receiptID);
         
     } catch(BarocertException ke) {
         throw ke;
@@ -39,24 +40,28 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>카카오 전자서명 상태확인(복수)</legend>
+                <legend>네이버 전자서명 상태확인(복수)</legend>
                 <ul>
                     <li>ReceiptID (접수 아이디) : <%=result.getReceiptID()%></li>
                     <li>ClientCode (이용기관 코드) : <%=result.getClientCode()%></li>
-                    <li>State (상태) : <%=result.getState()%></li>
+                    <li>State (상태코드) : <%=result.getState()%></li>
                     <li>ExpireIn (요청 만료시간) : <%=result.getExpireIn()%></li>
                     <li>CallCenterName (이용기관 명) : <%=result.getCallCenterName()%></li>
                     <li>CallCenterNum (이용기관 연락처) : <%=result.getCallCenterNum()%></li>
                     <li>ReqTitle (인증요청 메시지 제목) : <%=result.getReqTitle()%></li>
-                    <li>AuthCategory (인증분류) : <%=result.getAuthCategory()%></li>
+
+                    <% if (result.getTokenTypes() != null) {
+                        List<String> tokenTypes = result.getTokenTypes();
+                        for (int i = 0; i < tokenTypes.size(); i++) { %>
+                    <li>TokenTypes (원문 구분) : <%=tokenTypes.get(i)%></li>
+                    <% }
+                    }
+                    %>
+
                     <li>ReturnURL (복귀 URL) : <%=result.getReturnURL()%></li>
-                    <li>TokenType (원문 구분) : <%=result.getTokenType()%></li>
-                    <li>RequestDT (서명요청일시) : <%=result.getRequestDT()%></li>
-                    <li>ViewDT (서명조회일시) : <%=result.getViewDT()%></li>
-                    <li>CompleteDT (서명완료일시) : <%=result.getCompleteDT()%></li>
                     <li>ExpireDT (서명만료일시) : <%=result.getExpireDT()%></li>
-                    <li>VerifyDT (서명검증일시) : <%=result.getVerifyDT()%></li>
                     <li>Scheme (앱스킴) : <%=result.getScheme()%></li>
+                    <li>DeviceOSType (모바일장비 유형) : <%=result.getDeviceOSType()%></li>
                     <li>AppUseYN (앱사용유무) : <%=result.getAppUseYN()%></li>
                 </ul>
             </fieldset>
