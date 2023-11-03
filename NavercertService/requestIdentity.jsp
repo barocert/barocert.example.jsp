@@ -32,7 +32,7 @@
     identity.setReceiverBirthday(navercertService.encrypt("19700101"));
 
     // 고객센터 연락처 - 최대 12자
-    //identity.setCallCenterNum("1600-9854");
+    identity.setCallCenterNum("1600-9854");
     // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
     identity.setExpireIn(1000);
 
