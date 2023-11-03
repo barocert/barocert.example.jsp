@@ -34,7 +34,7 @@
     // 인증요청 메시지 제목 - 최대 40자
     sign.setReqTitle("전자서명단건테스트");
     // 고객센터 연락처 - 최대 12자
-    sign.setCallCenterNum("1600-9854");
+    //sign.setCallCenterNum("1600-9854");
     // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
     sign.setExpireIn(1000);
     // 인증요청 메시지 - 최대 500자

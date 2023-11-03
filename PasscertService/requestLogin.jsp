@@ -32,15 +32,15 @@
     login.setReceiverBirthday(passcertService.encrypt("19700101"));
 
     // 요청 메시지 제목 - 최대 40자
-    login.setReqTitle("패스써트 간편로그인 요청 타이틀");
+    login.setReqTitle("간편로그인 요청 메시지 제목");
     // 요청 메시지 - 최대 500자
-    login.setReqMessage(passcertService.encrypt("패스써트 간편로그인 요청 내용"));
+    login.setReqMessage(passcertService.encrypt("간편로그인 요청 메시지"));
     // 고객센터 연락처 - 최대 12자
     login.setCallCenterNum("1600-9854");
     // 요청 만료시간 - 최대 1,000(초)까지 입력 가능
     login.setExpireIn(1000);
     // 서명 원문 - 최대 2,800자 까지 입력가능
-    login.setToken(passcertService.encrypt("패스써트 간편로그인 요청 원문"));
+    login.setToken(passcertService.encrypt("간편로그인 요청 원문"));
 
     // 사용자 동의 필요 여부
     login.setUserAgreementYN(true);

@@ -32,11 +32,11 @@
     identity.setReceiverBirthday(kakaocertService.encrypt("19700101"));
 
     // 인증요청 메시지 제목 - 최대 40자
-    identity.setReqTitle("인증요청 메시지 제목란");
+    identity.setReqTitle("본인인증 요청 메시지 제목");
     // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
     identity.setExpireIn(1000);
     // 서명 원문 - 최대 40자 까지 입력가능
-    identity.setToken(kakaocertService.encrypt("본인인증요청토큰"));
+    identity.setToken(kakaocertService.encrypt("본인인증 요청 원문"));
 
     // AppToApp 인증요청 여부
     // true - AppToApp 인증방식, false - Talk Message 인증방식

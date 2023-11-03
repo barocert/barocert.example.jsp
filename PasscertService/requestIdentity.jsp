@@ -32,15 +32,15 @@
     identity.setReceiverBirthday(passcertService.encrypt("19700101"));
 
     // 요청 메시지 제목 - 최대 40자
-    identity.setReqTitle("패스써트 본인인증 인증요청 타이틀");
+    identity.setReqTitle("본인인증 요청 메시지 제목");
     // 요청 메시지 - 최대 500자
-    identity.setReqMessage(passcertService.encrypt("패스써트 본인인증 인증요청 내용"));
+    identity.setReqMessage(passcertService.encrypt("본인인증 요청 메시지"));
     // 고객센터 연락처 - 최대 12자
     identity.setCallCenterNum("1600-9854");
     // 요청 만료시간 - 최대 1,000(초)까지 입력 가능
     identity.setExpireIn(1000);
     // 서명 원문 - 최대 2,800자 까지 입력가능
-    identity.setToken(passcertService.encrypt("패스써트 본인인증 인증요청 원문"));
+    identity.setToken(passcertService.encrypt("본인인증 요청 원문"));
 
     // 사용자 동의 필요 여부
     identity.setUserAgreementYN(true);
