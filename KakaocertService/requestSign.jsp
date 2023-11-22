@@ -31,8 +31,10 @@
     // 수신자 생년월일 - 8자 (yyyyMMdd)
     sign.setReceiverBirthday(kakaocertService.encrypt("19700101"));
 
-    // 인증요청 메시지 제목 - 최대 40자
-    sign.setReqTitle("전자서명(단건) 요청 메시지 제목");
+    // 서명 요청 제목 - 최대 40자
+    sign.setSignTitle("전자서명(단건) 서명 요청 제목");
+    // 상세 설명 - 최대 500자
+    sign.setExtraMessage(kakaocertService.encrypt("전자서명(단건) 상세 설명"))
     // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
     sign.setExpireIn(1000);
     // 서명 원문 - 원문 2,800자 까지 입력가능

@@ -37,22 +37,24 @@
 
     // 인증요청 메시지 제목 - 최대 40자
     multiSign.setReqTitle("전자서명(복수) 요청 메시지 제목");
+    // 상세 설명 - 최대 500자
+    multiSign.setExtraMessage(kakaocertService.encrypt("전자서명(복수) 상세 설명"));
     // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
     multiSign.setExpireIn(1000);
 
     // 개별문서 등록 - 최대 20 건
     // 개별 요청 정보 객체
     MultiSignTokens token = new MultiSignTokens();
-    // 인증요청 메시지 제목 - 최대 40자
-    token.setReqTitle("전자서명(복수) 요청 메시지 제목 1");
+    // 서명 요청 제목 - 최대 40자
+    token.setSignTitle("전자서명(복수) 서명 요청 제목 1");
     // 서명 원문 - 원문 2,800자 까지 입력가능
     token.setToken(kakaocertService.encrypt("전자서명(복수) 요청 원문 1"));
     multiSign.addToken(token);
 
     // 개별 요청 정보 객체
     MultiSignTokens token2 = new MultiSignTokens();
-    // 인증요청 메시지 제목 - 최대 40자
-    token2.setReqTitle("전자서명(복수) 요청 메시지 제목 2");
+    // 서명 요청 제목 - 최대 40자
+    token2.setReqTitle("전자서명(복수) 서명 요청 제목 2");
     // 서명 원문 - 원문 2,800자 까지 입력가능
     token2.setToken(kakaocertService.encrypt("전자서명(복수) 요청 원문 2"));
     multiSign.addToken(token2);
