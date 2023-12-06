@@ -66,6 +66,14 @@
             <li><a href="NavercertService/verifyMultiSign.jsp">VerifyMultiSign</a> - 전자서명 검증(다건)</li>
         </ul>
     </fieldset>
+    <fieldset class="fieldset1">
+        <legend>Navercert 출금동의 API</legend>
+        <ul>
+            <li><a href="NavercertService/requestCMS.jsp">RequestCMS</a> - 출금동의 요청</li>
+            <li><a href="NavercertService/getCMSStatus.jsp">getCMSStatus</a> - 출금동의 상태확인</li>
+            <li><a href="NavercertService/verifyCMS.jsp">VerifyCMS</a> - 출금동의 검증</li>
+        </ul>
+    </fieldset>
     <br/>
     <fieldset class="fieldset1">
         <legend>Passcert 본인인증 API</legend>
