@@ -25,11 +25,11 @@
     Sign sign = new Sign();
 
     // 수신자 휴대폰번호 - 11자 (하이픈 제외)
-    sign.setReceiverHP(navercertService.encrypt("01067668440"));
+    sign.setReceiverHP(navercertService.encrypt("01012341234"));
     // 수신자 성명 - 80자
-    sign.setReceiverName(navercertService.encrypt("정우석"));
+    sign.setReceiverName(navercertService.encrypt("홍길동"));
     // 수신자 생년월일 - 8자 (yyyyMMdd)
-    sign.setReceiverBirthday(navercertService.encrypt("19900911"));
+    sign.setReceiverBirthday(navercertService.encrypt("19700101"));
 
     // 인증요청 메시지 제목 - 최대 40자
     sign.setReqTitle("전자서명(단건) 요청 메시지 제목");
@@ -40,10 +40,11 @@
     // 인증요청 메시지 - 최대 500자
     sign.setReqMessage(navercertService.encrypt("전자서명(단건) 요청 메시지"));
     // 서명 원문 - 원문 2,800자 까지 입력가능
-    sign.setToken(navercertService.encrypt(navercertService.sha256("전자서명(단건) 요청 원문")));
+    // 서명 원문 유형이 HASH인 경우, 원문은 SHA-256, Base64 URL Safe No Padding을 사용
+    sign.setToken(navercertService.encrypt("전자서명(단건) 요청 원문"));
     // 서명 원문 유형
     // TEXT - 일반 텍스트, HASH - HASH 데이터
-    sign.setTokenType("HASH");
+    sign.setTokenType("TEXT");
 
     // AppToApp 인증요청 여부
     // true - AppToApp 인증방식, false - Talk Message 인증방식
@@ -54,6 +55,7 @@
     // sign.setDeviceOSType("ANDROID");
 
     // AppToApp 방식 이용시, 호출할 URL
+    // "http", "https"등의 웹프로토콜 사용 불가
     // sign.setReturnURL("navercert://Sign");
     
     SignReceipt result = null;
