@@ -18,10 +18,10 @@
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
-    String clientCode = "023030000004";
+    String clientCode = "023040000001";
 
     // 출금동의 요청시 반환된 접수아이디
-    String receiptID = "02304050230300000040000000000008";
+    String receiptID = "02304050230400000010000000000008";
     
     CMSStatus result = null;
 
@@ -43,20 +43,11 @@
                     <li>ReceiptID (접수 아이디) : <%=result.getReceiptID()%></li>
                     <li>ClientCode (이용기관 코드) : <%=result.getClientCode()%></li>
                     <li>State (상태) : <%=result.getState()%></li>
-                    <li>ExpireIn (요청 만료시간) : <%=result.getExpireIn()%></li>
-                    <li>CallCenterName (이용기관 명) : <%=result.getCallCenterName()%></li>
-                    <li>CallCenterNum (이용기관 연락처) : <%=result.getCallCenterNum()%></li>
-                    <li>ReqTitle (인증요청 메시지 제목) : <%=result.getReqTitle()%></li>
-                    <li>AuthCategory (인증분류) : <%=result.getAuthCategory()%></li>
-                    <li>ReturnURL (복귀 URL) : <%=result.getReturnURL()%></li>
-                    <li>TokenType (원문 구분) : <%=result.getTokenType()%></li>
                     <li>RequestDT (서명요청일시) : <%=result.getRequestDT()%></li>
                     <li>ViewDT (서명조회일시) : <%=result.getViewDT()%></li>
                     <li>CompleteDT (서명완료일시) : <%=result.getCompleteDT()%></li>
                     <li>ExpireDT (서명만료일시) : <%=result.getExpireDT()%></li>
                     <li>VerifyDT (서명검증일시) : <%=result.getVerifyDT()%></li>
-                    <li>Scheme (앱스킴) : <%=result.getScheme()%></li>
-                    <li>AppUseYN (앱사용유무) : <%=result.getAppUseYN()%></li>
                 </ul>
             </fieldset>
         </div>

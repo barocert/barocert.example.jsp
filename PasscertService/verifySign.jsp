@@ -21,10 +21,10 @@
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
-    String clientCode = "023030000004";
+    String clientCode = "023070000014";
 
     // 전자서명 요청시 반환된 접수아이디
-    String receiptID = "02304050230300000040000000000007";
+    String receiptID = "02304050230700000140000000000007";
     
     // 전자서명 검증 요청 정보
     SignVerify signVerify = new SignVerify();

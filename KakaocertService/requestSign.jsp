@@ -19,7 +19,7 @@
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
-    String clientCode = "023030000004";
+    String clientCode = "023040000001";
 
     // 전자서명 요청 정보 객체
     Sign sign = new Sign();

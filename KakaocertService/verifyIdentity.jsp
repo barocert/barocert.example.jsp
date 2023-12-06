@@ -21,10 +21,10 @@
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
-    String clientCode = "023030000004";
+    String clientCode = "023040000001";
 
     // 본인인증 요청시 반환된 접수아이디
-    String receiptID = "02304170230300000040000000000020";
+    String receiptID = "02304170230400000010000000000020";
     
     IdentityResult result = null;
 

@@ -20,10 +20,10 @@
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
-    String clientCode = "023060000088";
+    String clientCode = "023090000021";
 
     // 본인인증 요청시 반환된 접수아이디
-    String receiptID = "02309050230600000880000000000013";
+    String receiptID = "02309050230900000210000000000013";
     
     IdentityResult result = null;
 
@@ -31,8 +31,8 @@
         
         result = navercertService.verifyIdentity(clientCode, receiptID);
         
-    } catch(BarocertException ke) {
-        throw ke;
+    } catch(BarocertException ne) {
+        throw ne;
     }
 %>
     <body>
@@ -52,6 +52,7 @@
                     <li>ReceiverEmail (수진자 이메일) : <%=result.getReceiverEmail()%></li>
                     <li>ReceiverForeign (외국인 여부) : <%=result.getReceiverForeign()%></li>
                     <li>SignedData (전자서명 데이터 전문) : <%=result.getSignedData()%></li>
+                    <li>Ci (연계정보) : <%=result.getCi()%></li>
                 </ul>
             </fieldset>
         </div>

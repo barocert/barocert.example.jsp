@@ -20,7 +20,7 @@
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
-    String clientCode = "023030000004";
+    String clientCode = "023040000001";
 
     // 간편로그인 토큰받기 요청시 반환된 txID
     String txID = "01daa94d3f-5ac9-429c-8661-40d0ad9ce3e3";

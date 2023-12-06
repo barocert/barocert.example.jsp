@@ -18,10 +18,10 @@
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
-    String clientCode = "023060000088";
+    String clientCode = "023090000021";
 
     // 전자서명 요청시 반환된 접수아이디
-    String receiptID = "02309050230600000880000000000011";
+    String receiptID = "02309050230900000210000000000011";
     
     SignStatus result = null;
 
@@ -29,8 +29,8 @@
         
         result = navercertService.getSignStatus(clientCode, receiptID);
         
-    } catch(BarocertException ke) {
-        throw ke;
+    } catch(BarocertException ne) {
+        throw ne;
     }
 %>
     <body>
@@ -38,21 +38,12 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>네이버 전자서명 상태확인(단건)</legend>
+                <legend>네이버 전자서명(단건) 상태확인</legend>
                 <ul>
                     <li>ReceiptID (접수 아이디) : <%=result.getReceiptID()%></li>
                     <li>ClientCode (이용기관 코드) : <%=result.getClientCode()%></li>
                     <li>State (상태코드) : <%=result.getState()%></li>
-                    <li>ExpireIn (요청 만료시간) : <%=result.getExpireIn()%></li>
-                    <li>CallCenterName (이용기관 명) : <%=result.getCallCenterName()%></li>
-                    <li>CallCenterNum (이용기관 연락처) : <%=result.getCallCenterNum()%></li>
-                    <li>ReqTitle (인증요청 메시지 제목) : <%=result.getReqTitle()%></li>
-                    <li>TokenType (원문 구분) : <%=result.getTokenType()%></li>
-                    <li>ReturnURL (복귀 URL) : <%=result.getReturnURL()%></li>
                     <li>ExpireDT (서명만료일시) : <%=result.getExpireDT()%></li>
-                    <li>Scheme (앱스킴) : <%=result.getScheme()%></li>
-                    <li>DeviceOSType (모바일장비 유형) : <%=result.getDeviceOSType()%></li>
-                    <li>AppUseYN (앱사용유무) : <%=result.getAppUseYN()%></li>
                 </ul>
             </fieldset>
         </div>

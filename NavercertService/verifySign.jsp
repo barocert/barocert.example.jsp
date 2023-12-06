@@ -19,10 +19,10 @@
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
-    String clientCode = "023060000088";
+    String clientCode = "023090000021";
 
     // 전자서명 요청시 반환된 접수아이디
-    String receiptID = "02309050230600000880000000000011";
+    String receiptID = "02309050230900000210000000000011";
     
     SignResult result = null;
 
@@ -30,8 +30,8 @@
         
         result = navercertService.verifySign(clientCode, receiptID);
         
-    } catch(BarocertException ke) {
-        throw ke;
+    } catch(BarocertException ne) {
+        throw ne;
     }
 %>
     <body>

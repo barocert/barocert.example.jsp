@@ -20,10 +20,10 @@
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
-    String clientCode = "023030000004";
+    String clientCode = "023040000001";
 
     // 자동이체 요청시 반환된 접수아이디
-    String receiptID = "02304050230300000040000000000008";
+    String receiptID = "02304050230400000010000000000008";
     
     CMSResult result = null;
 

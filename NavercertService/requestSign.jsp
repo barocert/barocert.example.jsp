@@ -19,17 +19,17 @@
      */
 
     // 이용기관코드, 파트너가 등록한 이용기관의 코드 (파트너 사이트에서 확인가능)
-    String clientCode = "023060000088";
+    String clientCode = "023090000021";
 
     // 전자서명 요청 정보 객체
     Sign sign = new Sign();
 
     // 수신자 휴대폰번호 - 11자 (하이픈 제외)
-    sign.setReceiverHP(navercertService.encrypt("01012341234"));
+    sign.setReceiverHP(navercertService.encrypt("01067668440"));
     // 수신자 성명 - 80자
-    sign.setReceiverName(navercertService.encrypt("홍길동"));
+    sign.setReceiverName(navercertService.encrypt("정우석"));
     // 수신자 생년월일 - 8자 (yyyyMMdd)
-    sign.setReceiverBirthday(navercertService.encrypt("19700101"));
+    sign.setReceiverBirthday(navercertService.encrypt("19900911"));
 
     // 인증요청 메시지 제목 - 최대 40자
     sign.setReqTitle("전자서명(단건) 요청 메시지 제목");
@@ -40,10 +40,10 @@
     // 인증요청 메시지 - 최대 500자
     sign.setReqMessage(navercertService.encrypt("전자서명(단건) 요청 메시지"));
     // 서명 원문 - 원문 2,800자 까지 입력가능
-    sign.setToken(navercertService.encrypt("전자서명(단건) 요청 원문"));
+    sign.setToken(navercertService.encrypt(navercertService.sha256("전자서명(단건) 요청 원문")));
     // 서명 원문 유형
     // TEXT - 일반 텍스트, HASH - HASH 데이터
-    sign.setTokenType("TEXT");
+    sign.setTokenType("HASH");
 
     // AppToApp 인증요청 여부
     // true - AppToApp 인증방식, false - Talk Message 인증방식
@@ -62,8 +62,8 @@
         
         result = navercertService.requestSign(clientCode, sign);
         
-    } catch(BarocertException ke) {
-        throw ke;
+    } catch(BarocertException ne) {
+        throw ne;
     }
 %>
     <body>
