@@ -55,7 +55,7 @@
     // 서명 원문 유형
     // token.setTokenType("HASH");
     // 서명 원문 유형이 HASH인 경우, 원문은 SHA-256, Base64 URL Safe No Padding을 사용
-    // token.setToken(navercertService.encrypt(navercertService.sha256("전자서명(복수) 요청 원문 1")));
+    // token.setToken(navercertService.encrypt(navercertService.sha256_base64url("전자서명(복수) 요청 원문 1")));
     multiSign.addToken(token);
 
     // 개별 요청 정보 객체
@@ -68,7 +68,7 @@
     // 서명 원문 유형
     // token2.setTokenType("HASH");
     // 서명 원문 유형이 HASH인 경우, 원문은 SHA-256, Base64 URL Safe No Padding을 사용
-    // token2.setToken(navercertService.encrypt(navercertService.sha256("전자서명(복수) 요청 원문 2")));
+    // token2.setToken(navercertService.encrypt(navercertService.sha256_base64url("전자서명(복수) 요청 원문 2")));
 
     multiSign.addToken(token2);
 
@@ -99,7 +99,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>네이버 전자서명 요청(복수)</legend>
+                <legend>네이버 전자서명(복수) 요청</legend>
                 <ul>
                     <li>ReceiptID (접수아이디) : <%=result.getReceiptID()%></li>
                     <li>scheme (앱스킴) : <%=result.getScheme()%></li>

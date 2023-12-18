@@ -44,7 +44,7 @@
                 <ul>
                     <li>ReceiptID (접수 아이디) : <%=result.getReceiptID()%></li>
                     <li>ClientCode (이용기관 코드) : <%=result.getClientCode()%></li>
-                    <li>State (상태코드) : <%=result.getState()%></li>
+                    <li>State (상태) : <%=result.getState()%></li>
                     <li>ExpireDT (서명만료일시) : <%=result.getExpireDT()%></li>
                 </ul>
             </fieldset>

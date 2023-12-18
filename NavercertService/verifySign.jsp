@@ -39,7 +39,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>네이버 전자서명 검증(단건)</legend>
+                <legend>네이버 전자서명(단건) 검증</legend>
                 <ul>
                     <li>ReceiptID (접수 아이디) : <%=result.getReceiptID()%></li>
                     <li>State (상태) : <%=result.getState()%></li>

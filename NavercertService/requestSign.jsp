@@ -48,7 +48,7 @@
     // 서명 원문 유형
     // sign.setTokenType("HASH");
     // 서명 원문 유형이 HASH인 경우, 원문은 SHA-256, Base64 URL Safe No Padding을 사용
-    // sign.setToken(navercertService.encrypt(navercertService.sha256("전자서명(단건) 요청 원문")));
+    // sign.setToken(navercertService.encrypt(navercertService.sha256_base64url("전자서명(단건) 요청 원문")));
     
     // AppToApp 인증요청 여부
     // true - AppToApp 인증방식, false - Talk Message 인증방식
@@ -77,7 +77,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>네이버 전자서명 요청(단건)</legend>
+                <legend>네이버 전자서명(단건) 요청</legend>
                 <ul>
                     <li>ReceiptID (접수아이디) : <%=result.getReceiptID()%></li>
                     <li>scheme (앱스킴) : <%=result.getScheme()%></li>
