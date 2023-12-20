@@ -37,7 +37,7 @@
     identity.setExpireIn(1000);
 
     // AppToApp 인증요청 여부
-    // true - AppToApp 인증방식, false - Talk Message 인증방식
+    // true - AppToApp 인증방식, false - 푸시(Push) 인증방식
     identity.setAppUseYN(false);
 
     // ApptoApp 인증방식에서 사용
