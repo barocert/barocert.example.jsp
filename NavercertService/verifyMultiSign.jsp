@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/main.css" media="screen" />
-        <title>Barocert Service jsp Example</title>
+        <title>Barocert JSP Example</title>
     </head>
 
 <%@page import="java.util.List" %>
@@ -41,7 +41,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>네이버 전자서명(복수) 검증</legend>
+                <legend>네이버 전자서명(복수) 검증 API JSP Example</legend>
                 <ul>
                     <li>접수 아이디 (ReceiptID) : <%=result.getReceiptID()%></li>
                     <li>상태 (State) : <%=result.getState()%></li>

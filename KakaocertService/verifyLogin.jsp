@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/main.css" media="screen" />
-        <title>Barocert Service jsp Example</title>
+        <title>Barocert JSP Example</title>
     </head>
 
 <%@ include file="common.jsp" %>
@@ -40,12 +40,16 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>카카오 간편로그인 검증</legend>
+                <legend>카카오 간편로그인 검증 API JSP Example</legend>
                 <ul>
                     <li>TxID (트랜잭션 아이디) : <%=result.getTxID()%></li>
                     <li>State (상태) : <%=result.getState()%></li>
                     <li>SignedData (전자서명 데이터 전문) : <%=result.getSignedData()%></li>
                     <li>Ci (연계정보) : <%=result.getCi()%></li>
+                    <li>ReceiverName (수신자 성명) : <%=result.getReceiverName()%></li>
+                    <li>ReceiverYear (수신자 출생년도) : <%=result.getReceiverYear()%></li>
+                    <li>ReceiverDay (수신자 출생월일) :  <%=result.getReceiverDay()%></li>
+                    <li>ReceiverHP (수신자 휴대폰번호) : <%=result.getReceiverHP()%></li>
                 </ul>
             </fieldset>
         </div>

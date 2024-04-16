@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/main.css" media="screen" />
-        <title>Barocert Service jsp Example</title>
+        <title>Barocert JSP Example</title>
     </head>
 
 <%@ include file="common.jsp" %>
@@ -85,7 +85,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>패스 전자서명 요청</legend>
+                <legend>패스 전자서명 요청 API JSP Example</legend>
                 <ul>
                     <li>ReceiptID (접수아이디) : <%=result.getReceiptID()%></li>
                     <li>scheme (앱스킴) : <%=result.getScheme()%></li>

@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/main.css" media="screen"/>
 
-    <title>Barocert Service jsp Example</title>
+    <title>Barocert JSP Example</title>
 </head>
 <body>
 <div id="content">
