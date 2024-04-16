@@ -40,7 +40,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>카카오 간편로그인 검증 API JSP Example</legend>
+                <legend>카카오 간편로그인 검증</legend>
                 <ul>
                     <li>TxID (트랜잭션 아이디) : <%=result.getTxID()%></li>
                     <li>State (상태) : <%=result.getState()%></li>

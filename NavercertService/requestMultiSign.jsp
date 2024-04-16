@@ -99,7 +99,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>네이버 전자서명(복수) 요청 API JSP Example</legend>
+                <legend>네이버 전자서명(복수) 요청</legend>
                 <ul>
                     <li>ReceiptID (접수아이디) : <%=result.getReceiptID()%></li>
                     <li>scheme (앱스킴) : <%=result.getScheme()%></li>

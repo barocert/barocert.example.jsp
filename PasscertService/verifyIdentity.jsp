@@ -49,7 +49,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>패스 본인인증 검증 API JSP Example</legend>
+                <legend>패스 본인인증 검증</legend>
                 <ul>
                     <li>ReceiptID (접수 아이디) : <%=result.getReceiptID()%></li>
                     <li>State (상태) : <%=result.getState()%></li>

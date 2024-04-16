@@ -40,7 +40,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>패스 간편로그인 상태확인 API JSP Example</legend>
+                <legend>패스 간편로그인 상태확인</legend>
                 <ul>
                     <li>ClientCode (이용기관 코드) : <%=result.getClientCode()%></li>
                     <li>ReceiptID (접수 아이디) : <%=result.getReceiptID()%></li>

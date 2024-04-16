@@ -72,7 +72,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>패스 간편로그인 요청 API JSP Example</legend>
+                <legend>패스 간편로그인 요청</legend>
                 <ul>
                     <li>ReceiptID (접수아이디) : <%=result.getReceiptID()%></li>
                     <li>Scheme (앱스킴) : <%=result.getScheme()%></li>

@@ -39,7 +39,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>카카오 전자서명(복수) 상태확인 API JSP Example</legend>
+                <legend>카카오 전자서명(복수) 상태확인</legend>
                 <ul>
                     <li>ReceiptID (접수 아이디) : <%=result.getReceiptID()%></li>
                     <li>ClientCode (이용기관 코드) : <%=result.getClientCode()%></li>

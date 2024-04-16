@@ -62,7 +62,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>카카오 본인인증 요청 API JSP Example</legend>
+                <legend>카카오 본인인증 요청</legend>
                 <ul>
                     <li>ReceiptID (접수아이디) : <%=result.getReceiptID()%></li>
                     <li>Scheme (앱스킴) : <%=result.getScheme()%></li>

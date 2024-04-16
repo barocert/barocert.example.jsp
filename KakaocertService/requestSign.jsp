@@ -65,7 +65,7 @@
             <p class="heading1">Response</p>
             <br/>
             <fieldset class="fieldset1">
-                <legend>카카오 전자서명 요청(단건)</legend>
+                <legend>카카오 전자서명(단건) 요청</legend>
                 <ul>
                     <li>ReceiptID (접수아이디) : <%=result.getReceiptID()%></li>
                     <li>Scheme (앱스킴) : <%=result.getScheme()%></li>
