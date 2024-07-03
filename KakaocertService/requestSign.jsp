@@ -11,6 +11,7 @@
 <%@page import="com.barocert.BarocertException"%>
 <%@page import="com.barocert.kakaocert.sign.Sign"%>
 <%@page import="com.barocert.kakaocert.sign.SignReceipt"%>
+<%@page import="com.barocert.crypto.Filez"%>
 
 <%
     /*
@@ -25,11 +26,11 @@
     Sign sign = new Sign();
 
     // 수신자 휴대폰번호 - 11자 (하이픈 제외)
-    sign.setReceiverHP(kakaocertService.encrypt("01012341234"));
+    sign.setReceiverHP(kakaocertService.encrypt("01054437896"));
     // 수신자 성명 - 80자
-    sign.setReceiverName(kakaocertService.encrypt("홍길동"));
+    sign.setReceiverName(kakaocertService.encrypt("최상혁"));
     // 수신자 생년월일 - 8자 (yyyyMMdd)
-    sign.setReceiverBirthday(kakaocertService.encrypt("19700101"));
+    sign.setReceiverBirthday(kakaocertService.encrypt("19880301"));
 
     // 서명 요청 제목 - 최대 40자
     sign.setSignTitle("전자서명(단건) 서명 요청 제목");
@@ -37,12 +38,19 @@
     sign.setExtraMessage(kakaocertService.encrypt("전자서명(단건) 커스텀 메시지"));
     // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
     sign.setExpireIn(1000);
+    // 서명 원문 유형
+    // TEXT - 일반 텍스트, HASH - HASH 데이터, PDF - PDF 데이터
+    sign.setTokenType("TEXT");
     // 서명 원문 - 원문 2,800자 까지 입력가능
     sign.setToken(kakaocertService.encrypt("전자서명(단건) 요청 원문"));
-    // 서명 원문 유형
-    // TEXT - 일반 텍스트, HASH - HASH 데이터
-    sign.setTokenType("TEXT");
+	// 서명 원문 유형
+    // sign.setTokenType("PDF");
+    // 서명 원문 유형이 PDF인 경우, 원문은 SHA-256, Base64 URL Safe No Padding을 사용
+    // String file = getServletContext().getRealPath("/barocert.pdf");
+    // byte[] target = Filez.fileToBytesFrom(file);
+    // sign.setToken(kakaocertService.encrypt(kakaocertService.sha256_base64url_file(target)));
 
+    
     // AppToApp 인증요청 여부
     // true - AppToApp 인증방식, false - Talk Message 인증방식
     sign.setAppUseYN(false);

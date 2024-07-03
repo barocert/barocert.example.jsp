@@ -15,6 +15,7 @@
 <%@page import="com.barocert.navercert.sign.MultiSignReceipt"%>
 <%@page import="com.barocert.navercert.sign.MultiSign"%>
 <%@page import="com.barocert.navercert.sign.MultiSignTokens"%>
+<%@page import="com.barocert.crypto.Filez"%>
 
 <%
     /*
@@ -52,10 +53,12 @@
     token.setTokenType("TEXT");
     // 서명 원문 - 원문 2,800자 까지 입력가능
     token.setToken(navercertService.encrypt("전자서명(복수) 요청 원문 1"));
-    // 서명 원문 유형
-    // token.setTokenType("HASH");
-    // 서명 원문 유형이 HASH인 경우, 원문은 SHA-256, Base64 URL Safe No Padding을 사용
-    // token.setToken(navercertService.encrypt(navercertService.sha256_base64url("전자서명(복수) 요청 원문 1")));
+ 	// 서명 원문 유형
+    // token.setTokenType("PDF");
+    // 서명 원문 유형이 PDF인 경우, 원문은 SHA-256, Base64 URL Safe No Padding을 사용
+    // String file = getServletContext().getRealPath("/barocert.pdf");
+    // byte[] target = Filez.fileToBytesFrom(file);
+    // token.setToken(navercertService.encrypt(navercertService.sha256_base64url_file(target)));
     multiSign.addToken(token);
 
     // 개별 요청 정보 객체
@@ -65,10 +68,12 @@
     token2.setTokenType("TEXT");
     // 서명 원문 - 원문 2,800자 까지 입력가능
     token2.setToken(navercertService.encrypt("전자서명(복수) 요청 원문 2"));
-    // 서명 원문 유형
-    // token2.setTokenType("HASH");
-    // 서명 원문 유형이 HASH인 경우, 원문은 SHA-256, Base64 URL Safe No Padding을 사용
-    // token2.setToken(navercertService.encrypt(navercertService.sha256_base64url("전자서명(복수) 요청 원문 2")));
+ 	// 서명 원문 유형
+    // token2.setTokenType("PDF");
+    // 서명 원문 유형이 PDF인 경우, 원문은 SHA-256, Base64 URL Safe No Padding을 사용
+    // String file = getServletContext().getRealPath("/barocert.pdf");
+    // byte[] target = Filez.fileToBytesFrom(file);
+    // token2.setToken(navercertService.encrypt(navercertService.sha256_base64url_file(target)));
 
     multiSign.addToken(token2);
 
