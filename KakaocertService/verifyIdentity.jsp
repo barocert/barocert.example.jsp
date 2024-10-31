@@ -51,6 +51,7 @@
                     <li>ReceiverYear (수신자 출생년도) : <%=result.getReceiverYear()%></li>
                     <li>ReceiverDay (수신자 출생월일) :  <%=result.getReceiverDay()%></li>
                     <li>ReceiverHP (수신자 휴대폰번호) : <%=result.getReceiverHP()%></li>
+                    <li>ReceiverGender (수신자 성별) : <%=result.getReceiverGender()%></li>
                 </ul>
             </fieldset>
         </div>
